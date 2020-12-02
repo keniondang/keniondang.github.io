@@ -5,7 +5,15 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.mainindex{
+  margin-top: 30px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+
 .footer {
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -20,7 +28,7 @@
 
 header{
     width: 100%;
-    height: 109vh;
+    height: 130%;
     background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(bromo.jpg) ;
     background-repeat: no-repeat;
     background-size:100% 100%;
@@ -82,6 +90,7 @@ header{
     background-color:rgba(0,0,0,0.3);
     min-width: 160px;
     box-shadow: 0px 20px 24px 0px rgba(0,0,0,0.3);
+    z-index: 10000;
 }
 
 .dropdown-menu a {
@@ -117,11 +126,17 @@ main{
     color: white;
 }
 
-section{
-
+.main2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 100px;
 }
 
-section h3{
+.home h3{
     font-size: 35px;
     font-weight: 200;
     letter-spacing: 3px;
@@ -129,7 +144,7 @@ section h3{
 
 }
 
-section h1{
+.home h1{
     margin: 30px 0 20px 0;
     font-size: 55px;
     font-weight: 700;
@@ -137,7 +152,7 @@ section h1{
     text-transform: uppercase;
 }
 
-section p{
+.home p{
     font-size: 25px;
     color: #eee;
     word-spacing: 2px;
@@ -146,7 +161,7 @@ section p{
 
 }
 
-section a{
+.home a{
     padding: 12px 30px;
     border-radius: 4px;
     outline: none;
@@ -158,7 +173,7 @@ section a{
     transition: all .5s ease;
 }
 
-section .buttonone{
+.home .buttonone{
     background: red;
     color: white;
 }
@@ -168,7 +183,7 @@ section .buttonone{
     color: white;
 }
 
-section .buttontwo{
+.home .buttontwo{
     background: white;
     color: black;
 }
@@ -176,6 +191,26 @@ section .buttontwo{
 .buttontwo:hover{
     background: rgba(0,0,0,0.5);
     color: white;
+}
+
+.buttonthree {
+  margin-top: -150px !important;
+  background: red;
+  color: white;
+  padding: 20px 38px;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all .5s ease;
+}
+
+.buttonthree:hover{
+  background: rgba(0,0,0,0.5);
+  color: white;
 }
 
 .change_content:after{
@@ -210,6 +245,7 @@ section .buttontwo{
   height: 740px;
   display: flex;
   margin: 50px auto;
+  margin-top: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -462,6 +498,7 @@ section .buttontwo{
     align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
 }
 
 table, th, td {
@@ -477,50 +514,42 @@ th, td {
     font-weight: 200;
 }
 
-section{
-  position: relative;
-  display: flex;
+section .container{
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #112d42;
+  min-height: 75vh;
+  position: relative;
 }
 
 section::before{
   content: '';
-  position: absolute;
   top: 0;
   left: 0;
   width: 50%;
   background: rgba(0, 0, 0, 0.5);
 }
 
-section .container {
-  position: relative;
-  min-width: 1100px;
-  min-height: 550px;
-  display: flex;
-  z-index: 1000;
-}
 
 section .container .contactinfo{
-  position: absolute;
-  top: 40px;
-  width: 350px;
-  height: calc(100%-80px);
-  background: rgba(0, 0, 0, 0.9);
+  width: 500px;
+  height: 95%;
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  border-radius: 20%;
 }
 
 section .container .contactinfo h2{
   color: #fff;
-  font-size: 24px;
+  font-size: 70px;
   font-weight: 500;
+  text-align: center;
 }
 
 section .container .contactinfo .info{
@@ -528,13 +557,127 @@ section .container .contactinfo .info{
   margin: 20px 0;
 }
 
-section .container .contactinfo .info li{
+section .container .contactinfo .info .infoli{
   position: relative;
-  list-style: none;
   display: flex;
-  margin: 20px 0;
+  margin: 75px 0;
   cursor: pointer;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.seccon .container .contactinfo .info li{
+section .container .contactinfo .info .infoli span:nth-child(1){
+  width: 30px;
+  min-width: 30px;
+  font-size: 50px;
+  position: absolute;
+}
+
+section .container .contactinfo .info .infoli span:nth-child(2){
+  color: #fff;
+  margin-left: 80px;
+  font-weight: 300;
+  opacity: 1;
+  font-size: 26px;
+  justify-content: left;
+  text-align: center;
+}
+
+section .container .contactinfo .info .infoli:hover span:nth-child(2){
+  opacity: 0.6;
+}
+
+section .container .contactinfo .sci{
+  position: relative;
+  display: flex;
+}
+
+section .container .contactinfo .sci li{
+  list-style: none;
+  margin-right: 59px;
+  align-items: center; 
+}
+
+section .container .contactinfo .sci li .iconcon{
+  text-decoration: none;
+  opacity: 1;
+}
+
+section .container .contactinfo .sci li:hover .iconcon{
+  opacity: 0.6;
+}
+
+.slidershow{
+  margin-top: 80px;
+  width: 1000px;
+  height: 600px;
+  overflow: hidden;
+  border: 3px solid black;
+}
+
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.navigation{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.bar{
+  width: 50px;
+  height: 10px;
+  border: 2px solid black;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.bar:hover{
+  background: black;
+}
+
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slide{
+  width: 20%;
+  transition: 0.6s;
+}
+.slide img{
+  width: 100%;
+  height: 100%;
+}
+
+#r1:checked ~ .s1{
+  margin-left: 0;
+}
+
+#r2:checked ~ .s1{
+  margin-left: -20%;
+}
+
+#r3:checked ~ .s1{
+  margin-left: -40%;
+}
+
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
+
+#r5:checked ~ .s1{
+  margin-left: -80%;
+}
