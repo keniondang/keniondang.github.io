@@ -60,10 +60,10 @@ const itemVariants = {
 };
 
 const skills = [
-  { category: "Machine Learning", icon: <Cpu size={20} />, desc: "Predictive Models & NLP", items: ["XGBoost", "LightGBM", "Scikit-Learn", "SHAP"] },
-  { category: "Engineering", icon: <Terminal size={20} />, desc: "Full-Stack Deployment", items: ["FastAPI", "React.js", "Docker", "CI/CD"] },
-  { category: "Data Systems", icon: <Database size={20} />, desc: "High-Volume Pipelines", items: ["SQL Server", "Big Data (46M+)", "Power BI", "SSAS"] },
-  { category: "Core Stack", icon: <Code size={20} />, desc: "Languages & Tools", items: ["Python", "SQL", "JavaScript", "HTML/CSS"] }
+  { category: "Machine Learning", icon: <Cpu size={20} />, desc: "Predictive Models & NLP", items: ["XGBoost", "LightGBM", "CatBoost", "Random Forest", "Logistic Regression", "KMeans", "Collaborative Filtering", "Matrix Factorization", "SHAP"] },
+  { category: "Engineering", icon: <Terminal size={20} />, desc: "Full-Stack Deployment", items: ["FastAPI", "React.js", "Docker", "CI/CD", "CSS", "Git"] },
+  { category: "Data Systems", icon: <Database size={20} />, desc: "High-Volume Pipelines", items: ["SSAS Tabular Models", "Massive Datasets", "Power BI", "SSAS", "n8n", "ETL Pipelines"] },
+  { category: "Core Stack", icon: <Code size={20} />, desc: "Languages & Tools", items: ["Python", "SQL", "JavaScript", "Dart"] }
 ];
 
 const Home = () => {
