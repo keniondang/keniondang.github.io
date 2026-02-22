@@ -33,16 +33,16 @@ const awardsData = [
     ]
   },
   {
-    title: "Emerging Tech Innovator (Placeholder)",
-    organization: "Global Tech Summit",
-    location: "Singapore",
-    date: "December 2025",
+    title: "3rd place - Class Website Design 2023 Competition",
+    organization: "Faculty of Information Technology, Ton Duc Thang University",
+    location: "Ho Chi Minh City, Vietnam",
+    date: "April 2023",
     color: "text-purple-400", // Purple
     icon: <Crown size={32} className="text-purple-400" />,
-    description: "Awarded for the most innovative application of Generative AI in a consumer-facing product.",
+    description: "Awarded for designing an intuitive and visually appealing website for the class.",
     details: [
-      "Developed a novel architecture for real-time video synthesis.",
-      "Outperformed benchmark latency by 40% using edge computing optimizations."
+      "Designed a class website with wordpress.",
+      "Directed the overall design, performance, and user experience of the website."
     ]
   }
 ];

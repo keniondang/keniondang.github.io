@@ -88,7 +88,7 @@ const Projects = () => {
           </span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl">
-          A collection of data pipelines, machine learning models, and full-stack applications I have engineered.
+          A collection of my personal or academic projects involving in data pipelines, machine learning models, and full-stack applications I have done.
         </p>
       </motion.div>
 

@@ -19,9 +19,10 @@ const educationData = [
       "Applied Maths for CS"
     ],
     achievements: [
-      "Dean's List for Academic Excellence (2023, 2024)",
-      "Research Assistant: NLP Lab",
-      "President of the Computer Science Club"
+      "Top 2 in Class (Top 7 in Faculty)",
+      "GPA: 8.7/10.0",
+      "2nd place in national Data Science Competition 2025",
+      "3rd place in website building contest 2023"
     ]
   },
   {
@@ -31,7 +32,7 @@ const educationData = [
     period: "Jul 2024",
     description: "Joined an intensive 2-week summer program, gaining hands-on experience in cutting-edge technologies through courses specializing in Artificial Intelligence and industry visits to big China tech companies. Engaged in cultural exchange and connecting with international peers. Completed a comprehensive research report on 3D Vision Intelligence, analyzing Point Cloud data structures and Visual Odometry algorithms for autonomous navigation systems.",
     coursework: ["Large Language Models", "3D Vision Intelligence", "Artificial Intelligence"],
-    achievements: ["Completed Capstone Project on AI Ethics"]
+    achievements: ["Completed a research report on 3D Vision Intelligence"]
   },
   {
     degree: "High School Diploma, Specialization in Mathematics and Natural Sciences",
@@ -40,9 +41,9 @@ const educationData = [
     period: " Jun 2019 - Jun 2022",
     description: "Ranked 1st in Class with the GPA of 9.3/10.0 under the International Oxford AQA Curriculum, completing specialized coursework in basic programming (Python & HTML) and computational logic.",
     achievements: [
-      "Valedictorian / Top 5% of Class",
-      "Gold Medal in National Math Olympiad",
-      "Varsity Basketball Team Captain"
+      "Top 1 in Class",
+      "GPA: 8.7/10.0",
+      "Represented school in international congress"
     ],
     coursework: ["Python", "Web Programming"],
   }

@@ -7,8 +7,6 @@ import {
 } from 'lucide-react';
 
 // --- IMPORT YOUR IMAGE ---
-// Change this to point to your actual file in assets
-// import myProfilePic from '../assets/profile.jpg'; 
 import myProfilePic from '../assets/1.png';
 
 // --- COMPONENTS: SPOTLIGHT CARD (Unchanged) ---
@@ -73,20 +71,20 @@ const Home = () => {
     <div className="min-h-screen">
       
       {/* 1. HERO SECTION */}
-      {/* We use 'relative' to contain the absolute background image */}
-      <section className="relative min-h-screen flex items-center px-6 md:px-20 max-w-7xl mx-auto pt-20 overflow-hidden">
+      {/* Removed pt-20 to allow true vertical centering, we will shift text manually */}
+      <section className="relative min-h-screen flex items-center px-6 md:px-20 max-w-7xl mx-auto overflow-hidden">
         
-        {/* --- BACKGROUND PROFILE IMAGE (BLENDED) --- */}
-        <div className="absolute right-0 top-0 h-full w-full md:w-[50%] z-0 pointer-events-none">
-          {/* The Image */}
+        {/* --- BACKGROUND PROFILE IMAGE --- */}
+        {/* Changed top-0 to bottom-0 so the image rests on the floor of the section */}
+        <div className="absolute right-0 bottom-0 h-[95vh] w-full md:w-[60%] z-0 pointer-events-none">
+          {/* THE FIX: Changed object-cover to object-contain. 
+              object-bottom md:object-right-bottom ensures the image aligns to the bottom right without stretching or cropping.
+          */}
           <img 
             src={myProfilePic} 
-            alt="Profile Background" 
-            className="w-full h-full object-cover object-top opacity-50 md:opacity-80 mix-blend-lighten md:mix-blend-normal"
+            alt="Profile" 
+            className="w-auto h-full max-h-none object-cover opacity-50 md:opacity-80 mix-blend-lighten md:mix-blend-normal transform translate-x-10 md:translate-x-40 scale-110 md:scale-115 origin-bottom-right"
           />
-          
-
-          
         </div>
 
         {/* --- MAIN TEXT CONTENT --- */}
@@ -94,7 +92,8 @@ const Home = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="relative z-10 max-w-3xl"
+          /* THE FIX: Added -translate-y-12 md:-translate-y-20 to pull the entire block higher up the screen */
+          className="relative z-10 max-w-3xl -translate-y-12 md:-translate-y-20"
         >
           {/* Badge */}
           <motion.div variants={itemVariants} className="mb-6">
@@ -114,7 +113,7 @@ const Home = () => {
           {/* Subtext */}
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-slate-300/80 mb-8 max-w-xl leading-relaxed">
             I combine <strong>Data Science</strong> with <strong>Full-Stack Engineering</strong> to turn raw numbers into profit-driving applications.
-            From analyzing 46M+ records to deploying scalable web apps.
+            From analyzing massive datasets to deploying scalable web apps.
           </motion.p>
 
           {/* Buttons */}
@@ -143,7 +142,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* 2. SKILLS SECTION (Same as before) */}
+      {/* 2. SKILLS SECTION */}
       <section className="py-20 px-6 md:px-20 border-t border-slate-800/50 bg-slate-950/50 relative z-20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <motion.div 

@@ -29,7 +29,7 @@ const Footer = () => {
 
         {/* Text */}
         <div className="text-center">
-          <p className="text-slate-300 font-medium">Designed & Built by Your Name</p>
+          <p className="text-slate-300 font-medium">Designed & Built by Keni Nicholas Ondang</p>
           <p className="text-slate-500 text-xs mt-2 font-mono">
             React.js · Tailwind CSS · Framer Motion
           </p>

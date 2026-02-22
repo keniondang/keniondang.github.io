@@ -81,57 +81,5 @@ export const projectsData = [
     tech: ["C#", "ASP.NET Core 8 Web API", "CQRS Pattern", "PostgreSQL", "MongoDB", "Apache Kafka", "ReactJS", "Docker", "Nginx"],
     links: { github: "#", demo: "#" },
     metrics: "Software Engineering Project (TDTU)"
-  },
-  {
-    id: "nlp-sentiment",
-    title: "NLP Sentiment Analyzer",
-    tagline: "Real-time social media sentiment tracking for brand monitoring.",
-    category: "NLP & AI",
-    timeSpan: "Dec 2024 - Jan 2025",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2670&auto=format&fit=crop",
-    gallery: ["https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2670&auto=format&fit=crop"],
-    description: "Analyzing customer sentiment across Twitter and Reddit to detect PR crises early.",
-    summary: [
-      "Brands need to know when public sentiment turns negative. This tool ingests live tweets and uses a BERT-based model to classify sentiment.",
-      "It alerts PR teams via Slack when negative sentiment spikes beyond a threshold."
-    ],
-    achievables: [
-      "Fine-tuned BERT model achieving 92% accuracy.",
-      "Integrated with Slack API for real-time alerts.",
-      "Processed 10k+ tweets/hour."
-    ],
-    tech: ["Python", "BERT", "HuggingFace", "Kafka"],
-    links: { github: "#" },
-    metrics: "92% Accuracy"
-  },
-  {
-    id: "recommendation-system",
-    title: "E-Commerce Recommender",
-    tagline: "Personalized product suggestions using Collaborative Filtering.",
-    category: "Recommender Systems",
-    timeSpan: "Nov 2024",
-    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2670&auto=format&fit=crop",
-    gallery: ["https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2670&auto=format&fit=crop"],
-    description: "Built a matrix factorization model to recommend products to users based on purchase history.",
-    summary: ["Using the MovieLens dataset approach, I built a recommender for a mock e-commerce store."],
-    achievables: ["Implemented Matrix Factorization (SVD).", "Built a 'Customers who bought this also bought' feature."],
-    tech: ["Python", "Scikit-Surprise", "Flask"],
-    links: { github: "#" },
-    metrics: "+15% CTR"
-  },
-  {
-    id: "finance-dashboard",
-    title: "Personal Finance Visualizer",
-    tagline: "Interactive dashboard for tracking expenses and investment growth.",
-    category: "Data Viz",
-    timeSpan: "Oct 2024",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2670&auto=format&fit=crop",
-    gallery: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2670&auto=format&fit=crop"],
-    description: "A D3.js powered dashboard to visualize spending habits.",
-    summary: ["Connects to CSV exports from banks and categorizes transactions automatically."],
-    achievables: ["Built complex interactive charts with D3.js.", "Automated categorization with regex."],
-    tech: ["JavaScript", "D3.js", "React"],
-    links: { github: "#" },
-    metrics: "100+ Users"
   }
 ];
