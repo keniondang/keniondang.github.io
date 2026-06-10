@@ -3,83 +3,165 @@
 export const projectsData = [
   {
     id: "customer-intelligence",
-    title: "Customer Intelligence & Retention Dashboard",
-    tagline: "Predicting 'silent churn' and automating retention strategies for 46M+ records.",
+    title: "Customer Intelligence & Retention Analytics Dashboard",
+    tagline: "Predicting 'silent churn' and automating retention strategy across 46M+ records.",
     category: "Business Intelligence",
     timeSpan: "Nov 2025 - Jan 2026",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop", 
+    // TODO: replace these stock images with REAL screenshots of your dashboard / model output.
+    // Put files in public/assets/projects/ and use paths like "/assets/projects/churn-1.png".
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1543286386-713df548e9cc?q=80&w=2670&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
     ],
-    description: "Engineered a high-volume pipeline for 46M+ records to predict 'silent churn' and automate retention strategies utilizing K-Means segmentation, churn prediction models and recommendation systems.",
+    description: "In-depth EDA on a 46M+ record e-commerce dataset to uncover behavior patterns, segment profiles, and retention risk signals, paired with a dual-stage churn model.",
     summary: [
-      "In the competitive online retail market, generic marketing strategies fail to engage diverse shopper segments, and manual analysis cannot predict churn or identify cross-selling opportunities effectively.",
-      "I engineered a full-stack intelligence platform using FastAPI and React, utilizing K-Means for customer segmentation and XGBoost to predict churn risks with 80% accuracy. Additionally, I integrated a personalized Recommendation System that suggests relevant products to specific user clusters, enabling data-driven cross-selling and proactive retention strategies."
+      "In a competitive online retail market, generic marketing fails to engage diverse shopper segments, and manual analysis cannot reliably predict churn or surface cross-selling opportunities.",
+      "I conducted in-depth Exploratory Data Analysis on 46M+ records to uncover customer behavior patterns and retention risk signals, then engineered a dual-stage predictive system: K-Means segmentation feeding an XGBoost churn model. SHAP analysis translated the model into clear, communicable drivers of churn for stakeholders, supporting targeted retention program design."
     ],
     achievables: [
-      "Architected a dual-stage predictive system on a 46M+ record dataset using K-Means for segmentation and XGBoost for churn scoring, achieving an 80.62% ROC-AUC.",
-      "Cleaned all records by engineering a robus preprocessing pipeline resolving data anomalies",
-      "Developed an ALS Matrix Factorization model for implicit data, reaching a 49.6% Hit Rate bybalancing automated replenishment with algorithmic discovery.",
-      "Engineered 47 behavioral features and utilized SHAP analysis to transparently identify and communicate key risk drivers to stakeholders.",
-      "Built a prototype with FastAPI and React.js, optimizing real-time inference by preloading 2GB of serialized models for low-latency performance."
+      "Conducted in-depth EDA on a 46M+ record e-commerce sales dataset to uncover customer behavior patterns, segment profiles, and retention risk signals.",
+      "Engineered 47 behavioral features and applied SHAP analysis to identify and communicate the key drivers of customer churn to non-technical stakeholders.",
+      "Architected a dual-stage predictive model using K-Means segmentation and XGBoost churn scoring, achieving 80.62% ROC-AUC.",
+      "Built scalable ETL pipelines to ingest and transform raw records, ensuring high data integrity for downstream analytics and modeling."
     ],
-    tech: ["Python", "JavaScript", "K-Means Clustering", "XGBoost", "SMOTE", "SHAP", "Elbow Method", "Silhouette Score"],
-    links: { 
-      github: "https://github.com/yourusername/project-repo", 
-      demo: "#",
-      report: "/assets/reports/customer-intelligence.pdf"
+    tech: ["Python", "K-Means Clustering", "XGBoost", "SHAP", "ETL", "Power BI"],
+    hasChurnExplorer: true,
+    links: {
+      github: "https://github.com/keniondang",
+      demo: null,
+      report: "PLACEHOLDER_DRIVE_REPORT_customer_intelligence" // replace with this project's Google Drive report link
     },
     metrics: "Information Technology Project (TDTU)"
   },
   {
-    id: "profit-forecast",
-    title: "Predictive Asset Valuation & Velocity Engine",
-    tagline: "Balancing inventory costs against sales demand to maximize Net Profit.",
+    id: "indonesian-consumer-behavior",
+    title: "Indonesian Digital Consumer Behavior Analysis",
+    tagline: "Mapping Indonesia's digital market: e-commerce, app rankings, and Gen Z payment behavior.",
+    category: "Market Research",
+    timeSpan: "2025",
+    // TODO: replace with real screenshots (Power BI / EDA charts) — /assets/projects/indo-1.png etc.
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+    ],
+    description: "Built a market analytics foundation on Indonesian digital consumer behavior, translating raw data into product recommendations for the Indonesian market.",
+    summary: [
+      "Entering the Indonesian digital market requires more than intuition. I built a data-backed view of how Indonesian consumers actually behave online, from e-commerce trends to digital payment adoption.",
+      "I collected and processed public datasets spanning e-commerce trends, app store rankings, and digital payment adoption, then ran EDA in Python and aggregated large-scale data in SQL to surface where the market is moving, identifying significant growth in mobile commerce and Gen Z digital spending, and visualized it all in Power BI for non-technical stakeholders."
+    ],
+    achievables: [
+      "Collected and processed public datasets on Indonesian digital consumer behavior spanning e-commerce trends, app store rankings, and digital payment adoption.",
+      "Conducted EDA with Python (Pandas, Matplotlib, Seaborn) to identify key consumer trends, spending patterns, and digital adoption behaviors across demographics.",
+      "Queried and aggregated large-scale datasets in SQL, identifying significant growth in mobile commerce and Gen Z digital spending habits.",
+      "Developed interactive Power BI dashboards, translating raw data into clear, actionable product recommendations for the Indonesian digital market."
+    ],
+    tech: ["Python", "Pandas", "SQL", "Power BI", "Market Research", "EDA"],
+    links: { github: "https://github.com/keniondang", demo: null, report: "PLACEHOLDER_DRIVE_REPORT_indonesian_consumer" },
+    metrics: "Independent Research"
+  },
+  {
+    id: "datathon-stormcast",
+    title: "StormCast — Financial Regression & Decisioning Engine",
+    tagline: "2nd of 134 teams at Data Storm 2025; 1st in the 24-hour modeling sprint.",
     category: "Predictive Analytics",
-    timeSpan: "Jun 2025 - Jul 2025",
+    timeSpan: "Jan 2026",
+    // TODO: replace with real screenshots (StormCast dashboard / charts) — /assets/projects/storm-1.png etc.
     image: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=2670&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=2670&auto=format&fit=crop"
     ],
-    description: "Engineered a real-time valuation engine using XGBoost and Time-Series forecasting to optimize trade-in margins for the secondary mobile market",
+    description: "Led a team of 4 to 2nd place among 134 teams, engineering a financial regression pipeline on banking datasets to forecast transaction liquidity and spending power.",
     summary: [
-      "Most forecasting models optimize for MAPE (Error), but a 5% error in a low-margin product hurts more than a 5% error in a high-margin one. I shifted the loss function to directly optimize for Net Profit.",
-      "Using LightGBM with a custom objective function, the model penalizes under-forecasting high-margin items more severely than over-forecasting low-cost items."
+      "Data Storm 2025 was a national datathon: 134 teams, banking datasets, and a 24-hour sprint. The challenge was forecasting transaction liquidity and spending power under real uncertainty.",
+      "I led a team of four, engineering a financial regression pipeline that ranked 1st in the 24-hour Hackathon sprint and carried us to 2nd place overall. We built a full-stack analytics engine featuring causal inference modeling, supply-risk forecasting, and real-time Power BI dashboarding to support business decision-making."
     ],
     achievables: [
-      "Built an end-to-end platform using Flask and SQL Server, managing everything from relational schema design and ETL pipelines to real-time API deployment.",
-      "Engineered a Multi-Quantile Pricing Engine (XGBoost & LGBM) to forecast floor and ceiling valuations, utilizing SHAP for automated appraisal transparency across 70+ device models.",
-      "Implemented Time-Series models (Prophet) with custom logistic growth to predict inventory needs, factoring in device lifecycle decay and successor-release impacts.",
-      "Developed a real-time engine to classify sales velocity (Prime vs. Aging stock) by integrating 90-day rolling historical trends into automated buy-back logic."
+      "Led a team of 4 to 2nd place among 134 competing teams; ranked 1st in the 24-hour Hackathon modeling sprint.",
+      "Engineered a financial regression pipeline on banking datasets to forecast transaction liquidity and spending power.",
+      "Developed Causal LightGBM logic to optimize risk-adjusted margins under uncertainty.",
+      "Built a full-stack analytics engine (ReactJS, FastAPI) with causal inference, supply-risk forecasting, and real-time Power BI dashboarding."
     ],
-    tech: ["Python", "XGBoost", "Random Forest", "Time-Series Forecasting", "FastAPI", "Microsoft SQL Server", "ReactJS", "Docker"],
-    links: { github: "#", demo: "#" },
+    tech: ["Python", "LightGBM", "Causal Inference", "FastAPI", "ReactJS", "Power BI"],
+    links: { github: "https://github.com/keniondang", demo: null, report: "PLACEHOLDER_DRIVE_REPORT_stormcast" },
+    metrics: "Vietnam Datathon — 2nd / 134 teams"
+  },
+  {
+    id: "predictive-pricing-inventory",
+    title: "Predictive Pricing & Inventory Intelligence",
+    tagline: "Forecasting optimal buy/sell prices and automating store-level stocking decisions.",
+    category: "Predictive Analytics",
+    timeSpan: "2025",
+    // TODO: replace with real screenshots — /assets/projects/pricing-1.png etc.
+    image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2670&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2670&auto=format&fit=crop"
+    ],
+    description: "An XGBoost & Random Forest pipeline that predicts optimal buy/sell prices and sales volumes, paired with a FastAPI optimization engine that automates store-level buy/reject decisions.",
+    summary: [
+      "Pricing and stocking decisions in a fast-moving resale market are hard to get right by hand — they depend on product age, holding costs, and shifting demand.",
+      "I built a predictive pipeline using XGBoost and Random Forest to forecast optimal buy/sell prices and sales volumes, modeling factors like phone age, holding costs, and historical trends. On top of it, I deployed a Greedy Search optimization engine via FastAPI that automates store-level 'buy' or 'reject' decisions based on real-time stock levels and forecasted demand."
+    ],
+    achievables: [
+      "Developed an XGBoost and Random Forest pipeline to predict optimal buy/sell prices and sales volumes, modeling phone age, holding costs, and historical trends.",
+      "Deployed a Greedy Search optimization engine via FastAPI that automates store-level buy/reject decisions based on real-time stock levels and forecasted demand.",
+      "Designed the system to turn raw inventory and pricing data into actionable, automated decisioning."
+    ],
+    tech: ["Python", "XGBoost", "Random Forest", "FastAPI", "Greedy Search Optimization"],
+    links: { github: "https://github.com/keniondang", demo: null, report: null },
     metrics: "Personal Project"
   },
   {
-    id: "predictive-pricing",
-    title: "Full-Stack Microservices Restaurant Information System.",
-    tagline: "Streamlining enterprise operations through a fault-tolerant, event-driven microservices architecture to ensure high availability.",
-    category: "Software Architecture",
-    timeSpan: "Nov 2024 - Dec 2024",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop",
+    id: "zumath-educational-game",
+    title: "Zumath — Python Educational Game",
+    tagline: "A Zuma-inspired math game that reinforces concepts through gamified play.",
+    category: "Software / EdTech",
+    timeSpan: "2022",
+    // TODO: replace with real screenshots — /assets/projects/zumath-1.png etc.
+    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=2670&auto=format&fit=crop",
     gallery: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=2670&auto=format&fit=crop"
     ],
-    description: "Designed a scalable microservices system with .NET Core and Apache Kafka to automate enterprise operations with 99.9% uptime.",
+    description: "A Python-based math learning game inspired by Zuma, built for the SEAMEO competition to make mathematics engaging through gamification.",
     summary: [
-      "In the hospitality industry, manual workflows create operational bottlenecks that frustrate customers and cause order errors during peak hours. Traditional point-of-sale systems often fail to synchronize front-of-house orders with kitchen operations in real-time.",
-      "I engineered a scalable, event-driven microservices system using .NET Core and Apache Kafka. The solution digitizes the entire lifecycle—from QR-code ordering to real-time Kitchen Display Screens (KDS)—automating workflow coordination to eliminate errors and ensuring 99.5% operational uptime under heavy load."
+      "Built for the SEAMEO competition (associated with Sophos School Indonesia), Zumath set out to make learning math genuinely fun rather than a chore.",
+      "I developed a Python-based math learning game inspired by Zuma, blending educational content with arcade-style gameplay. Pygame handled the game physics, Tkinter the interface, and NumPy the mathematical computations behind the puzzles — all designed to reinforce mathematical concepts through play."
     ],
     achievables: [
-      "Architected a microservices system using C# ASP.NET Core and Docker, leveraging PostgreSQL, MongoDB, and Apache Kafka for polyglot persistence and real-time event streaming.",
-      "Applied Factory, Singleton, and Observer patterns to build decoupled, autonomous services, ensuring high scalability and 99.9% system uptime.",
-      "Validated system through load testing for 150 concurrent users, achieving 99.5% order accuracy and sub-second notification speeds to streamline kitchen operations."
+      "Developed a Python-based math learning game inspired by Zuma, integrating educational gameplay.",
+      "Implemented Pygame for game physics, Tkinter for the UI, and NumPy for mathematical computations.",
+      "Designed an interactive, engaging interface to reinforce mathematical concepts through gamification."
     ],
-    tech: ["C#", "ASP.NET Core 8 Web API", "CQRS Pattern", "PostgreSQL", "MongoDB", "Apache Kafka", "ReactJS", "Docker", "Nginx"],
-    links: { github: "#", demo: "#" },
-    metrics: "Software Engineering Project (TDTU)"
+    tech: ["Python", "Pygame", "NumPy", "Tkinter", "PyCharm"],
+    links: { github: "https://github.com/keniondang", demo: null, report: null },
+    metrics: "SEAMEO Competition · Sophos School Indonesia"
+  },
+  {
+    id: "pos-web-application",
+    title: "Point of Sale (POS) Web Application",
+    tagline: "A full POS system for sales, inventory, and employees with real-time analytics.",
+    category: "Full-Stack / Web",
+    timeSpan: "2024",
+    // TODO: replace with real screenshots — /assets/projects/pos-1.png etc.
+    image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=2670&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=2670&auto=format&fit=crop"
+    ],
+    description: "A web-based POS system for managing sales, inventory, and employees, with secure authentication, real-time transactions, and interactive analytics.",
+    summary: [
+      "Built as the final project for TDTU's Web Programming & Application course, this POS system covers the full retail workflow — sales, inventory, and staff management — in one web app.",
+      "I implemented secure login with admin-controlled account creation and email-based authentication, a real-time transaction system with dynamic cart updates and PDF invoice generation, and interactive sales reports powered by Chart.js and DataTables.js for real-time analytics."
+    ],
+    achievables: [
+      "Developed a POS system for managing sales, inventory, and employees.",
+      "Implemented secure login with admin-controlled account creation and email-based authentication.",
+      "Built a real-time transaction system with dynamic cart updates and PDF invoice generation.",
+      "Designed interactive sales reports with Chart.js and DataTables.js for real-time analytics."
+    ],
+    tech: ["PHP", "MySQL", "JavaScript", "AJAX", "jQuery", "Bootstrap", "Chart.js", "DataTables.js"],
+    links: { github: "https://github.com/keniondang", demo: null, report: null },
+    metrics: "Course Final Project (TDTU)"
   }
 ];

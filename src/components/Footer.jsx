@@ -13,7 +13,7 @@ const Footer = () => {
           {[
             { icon: Github, link: "https://github.com/keniondang" },
             { icon: Linkedin, link: "https://linkedin.com/in/keniondang" },
-            { icon: Mail, link: "mailto:your.keninondang@gmail.com" }
+            { icon: Mail, link: "mailto:keninondang@gmail.com" }
           ].map((social, idx) => (
             <a 
               key={idx}

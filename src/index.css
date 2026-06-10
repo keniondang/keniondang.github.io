@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth in-page scrolling, with offset so anchored sections clear the fixed navbar */
+html {
+  scroll-behavior: smooth;
+}
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 /* Add this to the bottom of index.css */
 .bg-radial-gradient {
   background: radial-gradient(circle, transparent 40%, #020617 100%);

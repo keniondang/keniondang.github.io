@@ -2,12 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  ArrowRight, Cpu, Terminal, Database, Code, 
-  ChevronsDown, Sparkles
+  ArrowRight, Cpu, Search, Database, Code, 
+  ChevronsDown, Sparkles, Download
 } from 'lucide-react';
 
 // --- IMPORT YOUR IMAGE ---
 import myProfilePic from '../assets/1.png';
+
+// --- COMPONENTS ---
+import AcademicJourney from '../components/AcademicJourney';
+
+// --- LINKS (replace this with your real Google Drive resume link) ---
+const RESUME_URL = "PLACEHOLDER_GOOGLE_DRIVE_RESUME_LINK"; // e.g. "https://drive.google.com/file/d/.../view"
 
 // --- COMPONENTS: SPOTLIGHT CARD (Unchanged) ---
 const SpotlightCard = ({ children, className = "" }) => {
@@ -60,10 +66,10 @@ const itemVariants = {
 };
 
 const skills = [
-  { category: "Machine Learning", icon: <Cpu size={20} />, desc: "Predictive Models & NLP", items: ["XGBoost", "LightGBM", "CatBoost", "Random Forest", "Logistic Regression", "KMeans", "Collaborative Filtering", "Matrix Factorization", "SHAP"] },
-  { category: "Engineering", icon: <Terminal size={20} />, desc: "Full-Stack Deployment", items: ["FastAPI", "React.js", "Docker", "CI/CD", "CSS", "Git"] },
-  { category: "Data Systems", icon: <Database size={20} />, desc: "High-Volume Pipelines", items: ["SSAS Tabular Models", "Massive Datasets", "Power BI", "SSAS", "n8n", "ETL Pipelines"] },
-  { category: "Core Stack", icon: <Code size={20} />, desc: "Languages & Tools", items: ["Python", "SQL", "JavaScript", "Dart"] }
+  { category: "Research & Analytics", icon: <Search size={20} />, desc: "Insight & Decisions", items: ["Market Research", "Product Research", "Competitive Analysis", "Consumer Behavior", "EDA", "Customer Segmentation (RFM)", "Churn Analysis", "SHAP"] },
+  { category: "Machine Learning", icon: <Cpu size={20} />, desc: "Predictive Modeling", items: ["XGBoost", "LightGBM", "K-Means", "Regression", "Classification", "Time-Series", "Causal Inference"] },
+  { category: "Data & BI", icon: <Database size={20} />, desc: "Pipelines & Dashboards", items: ["Power BI (DAX)", "SQL Server", "PostgreSQL", "ETL Pipelines", "Large-scale Data", "Excel", "Splunk"] },
+  { category: "Core Stack", icon: <Code size={20} />, desc: "Languages & Tools", items: ["Python", "SQL", "Pandas", "Scikit-learn", "FastAPI", "React.js", "Git"] }
 ];
 
 const Home = () => {
@@ -72,7 +78,7 @@ const Home = () => {
       
       {/* 1. HERO SECTION */}
       {/* Removed pt-20 to allow true vertical centering, we will shift text manually */}
-      <section className="relative min-h-screen flex items-center px-6 md:px-20 max-w-7xl mx-auto overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center px-6 md:px-20 max-w-7xl mx-auto overflow-hidden">
         
         {/* --- BACKGROUND PROFILE IMAGE --- */}
         {/* Changed top-0 to bottom-0 so the image rests on the floor of the section */}
@@ -104,30 +110,32 @@ const Home = () => {
 
           {/* Headline */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-8xl font-bold text-slate-100 mb-6 leading-[1.1] tracking-tight">
-            Building systems that <br />
+            Research that <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 animate-gradient bg-300%">
-              bridge the gap.
+              ships products.
             </span>
           </motion.h1>
 
           {/* Subtext */}
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-slate-300/80 mb-8 max-w-xl leading-relaxed">
-            I combine <strong>Data Science</strong> with <strong>Full-Stack Engineering</strong> to turn raw numbers into profit-driving applications.
-            From analyzing massive datasets to deploying scalable web apps.
+            A <strong>Research & Data Analytics</strong> specialist with internship experience across two fast-growing tech companies — owning Indonesian market research for an AI product launch, and building enterprise data pipelines and BI at one of Vietnam's largest tech firms. I turn large-scale data into insights and decisions that move products forward.
           </motion.p>
 
           {/* Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-5">
-            <Link to="/projects">
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-5">
+            <Link to="/experience">
               <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] flex items-center gap-2 transform hover:-translate-y-1">
-                View My Work <ArrowRight size={20} />
+                View My Experience <ArrowRight size={20} />
               </button>
             </Link>
-            <Link to="/about">
-              <button className="px-8 py-4 bg-slate-900/50 border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white rounded-xl font-semibold text-lg transition-all backdrop-blur-md">
-                About Me
-              </button>
-            </Link>
+            <a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="px-8 py-4 bg-slate-900/50 border border-slate-700 text-slate-300 hover:border-blue-500 hover:text-white rounded-xl font-semibold text-lg transition-all backdrop-blur-md flex items-center gap-2"
+            >
+              <Download size={20} /> See My Resume
+            </a>
           </motion.div>
         </motion.div>
 
@@ -143,7 +151,7 @@ const Home = () => {
       </section>
 
       {/* 2. SKILLS SECTION */}
-      <section className="py-20 px-6 md:px-20 border-t border-slate-800/50 bg-slate-950/50 relative z-20 backdrop-blur-sm">
+      <section id="skills" className="py-28 px-6 md:px-20 border-t border-slate-800/50 bg-slate-950/50 relative z-20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -151,7 +159,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Technical Arsenal</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Research & Technical Toolkit</h2>
             <div className="h-1 w-20 bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
           </motion.div>
 
@@ -185,21 +193,63 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. INTRO SECTION */}
-      <section className="py-32 px-6 md:px-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+      {/* 3. PROJECTS SECTION */}
+      <section id="projects" className="py-28 px-6 md:px-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
         <div className="md:w-1/2">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-100 mb-6 leading-tight">
-            Not just a Data Scientist. <br/>
-            <span className="text-slate-500">A problem solver.</span>
+            From notebook <br/>
+            <span className="text-slate-500">to real impact.</span>
           </h2>
         </div>
         <div className="md:w-1/2">
           <p className="text-lg text-slate-400 leading-relaxed mb-6">
-            Most data projects fail because they never leave the notebook. I focus on the "Last Mile" of Data Science—deploying models into reliable, user-friendly applications that stakeholders can actually use.
+            My projects go beyond the dashboard — from a churn-prediction system on a 46M+ record dataset, to a market-research deep dive on Indonesian digital consumers, to an award-winning financial forecasting engine built in a 24-hour datathon sprint. Each one turns large-scale data into something a business can actually act on.
           </p>
-          <Link to="/about" className="text-blue-400 font-semibold hover:text-blue-300 inline-flex items-center gap-2 group text-lg">
-            Read my full journey <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"/>
+          <Link to="/projects">
+            <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] inline-flex items-center gap-2 transform hover:-translate-y-1">
+              See My Projects <ArrowRight size={20} />
+            </button>
           </Link>
+        </div>
+      </section>
+
+      {/* 4. EDUCATION SECTION */}
+      <section id="education" className="py-28 px-6 md:px-20 border-t border-slate-800/50 bg-slate-950/50 relative z-20 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+
+          {/* Centered intro — distinct from the side-by-side sections above */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-20"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-100 mb-6 leading-tight">
+              An international <span className="text-slate-500">academic path.</span>
+            </h2>
+            <p className="text-lg text-slate-400 leading-relaxed">
+              An Indonesian studying abroad on a full scholarship, I've built my education across three countries — from an Oxford AQA high-school track at home, to an AI summer program in China, to a Computer Science degree in Vietnam (ranked 2nd in class). Three cultures, three classrooms, one throughline: learning to read different markets and work with people from anywhere.
+            </p>
+          </motion.div>
+
+          {/* The journey */}
+          <AcademicJourney />
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="flex justify-center mt-20"
+          >
+            <Link to="/education">
+              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] inline-flex items-center gap-2 transform hover:-translate-y-1">
+                Explore My Education <ArrowRight size={20} />
+              </button>
+            </Link>
+          </motion.div>
+
         </div>
       </section>
 

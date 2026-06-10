@@ -1,49 +1,85 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, BookOpen, Award, Star } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, BookOpen, Award, Star, BadgeCheck } from 'lucide-react';
+import Placeholder from '../components/Placeholder';
+import Logo from '../components/Logo';
+import Gallery from '../components/Gallery';
+
+// --- CERTIFICATIONS DATA (from CV) ---
+const certifications = [
+  {
+    issuer: "IBM SkillsBuild",
+    logo: "/assets/logos/ibm.png", // replace with your actual IBM logo
+    items: ["Data Fundamentals", "Data Literacy", "Data Analytics"],
+    note: "[Explain what these IBM SkillsBuild tracks covered and how you applied them.]"
+  },
+  {
+    issuer: "Kaggle",
+    logo: "/assets/logos/kaggle.png", // replace with your actual Kaggle logo
+    items: ["Python", "Pandas", "Data Visualization", "Intro to SQL", "Advanced SQL"],
+    note: "[Explain what you learned in these Kaggle courses and where you put it to use.]"
+  }
+];
 
 // --- DATA (Replace placeholders with your real CV info) ---
 const educationData = [
   {
     degree: "Bachelor of Science in Computer Science",
-    institution: "Ton Duc Thang University", // Replace with your actual university
+    institution: "Ton Duc Thang University (TDTU)",
+    logo: "/assets/logos/tdtu.png", // replace with your actual TDTU logo
     location: "Ho Chi Minh City, Vietnam",
-    period: "Oct 2022 -  Oct 2026 (Expected)",
-    // gpa: "3.6/4.0", // Uncomment if you want to display GPA
-    description: "Final-year Computer Science student in a fully English-taught program, awarded with a full scholarship. Currently ranked 2nd in Class (Top 7 in Faculty) with a GPA of 8.7/10.0, combining strong Software Engineering principles with advanced Machine Learning to develop and architect scalable solutions that drive strategic decision-making.",
+    period: "Expected Oct 2026",
+    gallery: [
+      { src: "/assets/photos/tdtu-1.jpg", alt: "TDTU campus / photo", caption: "" },
+      // add as many real photos as you have — layout adapts to the count
+    ],
+    description: "TDTU is a leading research university in Vietnam, ranked Top 501–600 in QS World University Rankings. Final-year student on a full academic scholarship in a fully English-taught program, currently ranked 2nd in Class (Top 7 in Faculty) with a GPA of 8.7/10.0 (~3.7/4.0). Coursework spans Data Science, Machine Learning, Statistics, and Software Engineering.",
+    longDescription: "[Write the fuller TDTU story here: what you actually studied, the courses that mattered most, the kind of projects each led to, what you focused your data-science track on, any research, teams, or standout coursework. This is the website-only depth that expands the one-line CV version.]",
     coursework: [
-      "Data Structures & Algorithms",
+      "Data Science",
       "Machine Learning",
+      "Statistics",
       "Database Systems",
-      "Logical Thinking",
-      "Applied Maths for CS"
+      "Software Engineering"
     ],
     achievements: [
-      "Top 2 in Class (Top 7 in Faculty)",
-      "GPA: 8.7/10.0",
-      "2nd place in national Data Science Competition 2025",
-      "3rd place in website building contest 2023"
+      "Ranked 2nd in Class (Top 7 in Faculty)",
+      "GPA: 8.7/10.0 (~3.7/4.0)",
+      "Full academic scholarship",
+      "2nd place, Data Storm 2025 (national datathon)"
     ]
   },
   {
     degree: "SCUT Global Engineering Summer Program",
-    institution: "South China University of Technology", // Replace with your summer school
-    location: "Guangzhou, China", 
+    institution: "South China University of Technology (SCUT)",
+    logo: "/assets/logos/scut.png", // replace with your actual SCUT logo
+    location: "Guangzhou, China",
     period: "Jul 2024",
-    description: "Joined an intensive 2-week summer program, gaining hands-on experience in cutting-edge technologies through courses specializing in Artificial Intelligence and industry visits to big China tech companies. Engaged in cultural exchange and connecting with international peers. Completed a comprehensive research report on 3D Vision Intelligence, analyzing Point Cloud data structures and Visual Odometry algorithms for autonomous navigation systems.",
+    gallery: [
+      { src: "/assets/photos/scut-1.jpg", alt: "SCUT program / China company visit", caption: "" },
+      // add your real SCUT / company-visit photos here
+    ],
+    description: "Selected for a competitive 2-week AI-focused program with visits to leading Chinese tech companies and cultural exchange with international peers. Authored a research report on 3D Vision Intelligence covering Point Cloud data structures and Visual Odometry algorithms for autonomous navigation.",
+    longDescription: "[Expand the SCUT summer program here: which companies you visited and what stood out, what the AI coursework covered day to day, what your 3D Vision Intelligence research actually involved and concluded, and what you took away from the cultural exchange.]",
     coursework: ["Large Language Models", "3D Vision Intelligence", "Artificial Intelligence"],
-    achievements: ["Completed a research report on 3D Vision Intelligence"]
+    achievements: ["Authored a research report on 3D Vision Intelligence"]
   },
   {
-    degree: "High School Diploma, Specialization in Mathematics and Natural Sciences",
-    institution: "Sophos School Indonesia", // Replace with your high school
+    degree: "High School Diploma — Mathematics & Natural Sciences",
+    institution: "Sophos School Indonesia",
+    logo: "/assets/logos/sophos.png", // replace with your actual Sophos logo
     location: "Tangerang, Indonesia",
-    period: " Jun 2019 - Jun 2022",
-    description: "Ranked 1st in Class with the GPA of 9.3/10.0 under the International Oxford AQA Curriculum, completing specialized coursework in basic programming (Python & HTML) and computational logic.",
+    period: "Jun 2022",
+    gallery: [
+      { src: "/assets/photos/sophos-1.jpg", alt: "Sophos School / high school photo", caption: "" },
+      // add your real high-school photos here
+    ],
+    description: "Ranked 1st in Class with a GPA of 9.3/10.0 under the International Oxford AQA curriculum, completing specialized coursework in basic programming (Python & HTML) and computational logic.",
+    longDescription: "[Expand on Sophos / high school here: what the Oxford AQA track involved, the subjects you specialized in, your first programming experiences, and what set you on the path toward data science.]",
     achievements: [
-      "Top 1 in Class",
-      "GPA: 8.7/10.0",
-      "Represented school in international congress"
+      "Ranked 1st in Class",
+      "GPA: 9.3/10.0",
+      "Represented school at an international congress"
     ],
     coursework: ["Python", "Web Programming"],
   }
@@ -79,13 +115,16 @@ const EducationCard = ({ data, index }) => {
 
           {/* Header Section */}
           <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-6">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">
-                {data.degree}
-              </h3>
-              <div className="text-lg text-slate-300 font-medium flex items-center gap-2">
-                <BookOpen size={18} className="text-blue-500" />
-                {data.institution}
+            <div className="flex items-start gap-3">
+              <Logo src={data.logo} alt={`${data.institution} logo`} size={40} />
+              <div>
+                <h3 className="text-2xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">
+                  {data.degree}
+                </h3>
+                <div className="text-lg text-slate-300 font-medium flex items-center gap-2">
+                  <BookOpen size={18} className="text-blue-500" />
+                  {data.institution}
+                </div>
               </div>
             </div>
             
@@ -103,6 +142,11 @@ const EducationCard = ({ data, index }) => {
           <p className="text-slate-400 leading-relaxed mb-6 border-l-2 border-blue-500/30 pl-4">
             {data.description}
           </p>
+
+          {/* Expanded narrative (website-only depth) */}
+          {data.longDescription && (
+            <Placeholder>{data.longDescription}</Placeholder>
+          )}
 
           {/* Achievements */}
           {data.achievements && (
@@ -135,6 +179,14 @@ const EducationCard = ({ data, index }) => {
                   </span>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Photo Gallery (adaptive — flexes to however many photos you add) */}
+          {data.gallery && data.gallery.length > 0 && (
+            <div className="mt-6">
+              <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Gallery</h4>
+              <Gallery images={data.gallery} />
             </div>
           )}
 
@@ -172,6 +224,53 @@ const Education = () => {
           <EducationCard key={idx} data={edu} index={idx} />
         ))}
       </div>
+
+      {/* Certifications */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-20"
+      >
+        <div className="inline-block mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-100 mb-2 flex items-center gap-3">
+            <BadgeCheck className="text-blue-500" size={28} /> Certifications
+          </h2>
+          <div className="h-1 w-full bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]" />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {certifications.map((cert, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-slate-900/40 border border-slate-800 backdrop-blur-md rounded-2xl p-6 hover:border-blue-500/30 transition-all duration-300"
+            >
+              <h3 className="text-lg font-bold text-slate-100 mb-4 flex items-center gap-2">
+                <Logo src={cert.logo} alt={`${cert.issuer} logo`} size={28} /> {cert.issuer}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {cert.items.map((item, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 text-xs font-medium text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-full"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              {cert.note && (
+                <div className="mt-4">
+                  <Placeholder>{cert.note}</Placeholder>
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
     </div>
   );

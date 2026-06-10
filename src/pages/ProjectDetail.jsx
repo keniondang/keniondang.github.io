@@ -3,11 +3,15 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowLeft, Github, ExternalLink, Calendar, 
-  FileText, ChevronLeft, ChevronRight, Layers, CheckCircle 
+  FileText, ChevronLeft, ChevronRight, Layers, CheckCircle, HardDrive, Sparkles 
 } from 'lucide-react';
 
 // Import your data
 import { projectsData } from '../data/projectsData';
+import ChurnExplorer from '../components/ChurnExplorer';
+
+// A report link that's still a placeholder shouldn't render as a real (broken) link
+const isReportPlaceholder = (url) => !url || String(url).startsWith('PLACEHOLDER');
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -115,10 +119,10 @@ const ProjectDetail = () => {
             </div>
           </section>
 
-          {/* Key Achievables */}
+          {/* Key Achievements */}
           <section>
             <h2 className="text-2xl font-bold text-slate-100 mb-4 flex items-center gap-2">
-              <CheckCircle className="text-green-500" size={24} /> Key Achievables
+              <CheckCircle className="text-green-500" size={24} /> Key Achievements
             </h2>
             <ul className="grid gap-3">
               {project.achievables.map((item, idx) => (
@@ -150,9 +154,18 @@ const ProjectDetail = () => {
                 </a>
               )}
               {project.links.report && (
-                <a href={project.links.report} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors p-2 hover:bg-slate-800 rounded-lg">
-                  <FileText size={20} /> Read Full Report (PDF)
-                </a>
+                isReportPlaceholder(project.links.report) ? (
+                  <div
+                    title="Replace this with the project's Google Drive report link in projectsData.js"
+                    className="flex items-center gap-3 text-amber-300/80 p-2 rounded-lg border border-dashed border-amber-500/40 bg-amber-500/5 text-sm"
+                  >
+                    <HardDrive size={20} /> Full Report — add Drive link
+                  </div>
+                ) : (
+                  <a href={project.links.report} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors p-2 hover:bg-slate-800 rounded-lg">
+                    <HardDrive size={20} /> Full Report (Google Drive)
+                  </a>
+                )
               )}
             </div>
           </div>
@@ -174,6 +187,24 @@ const ProjectDetail = () => {
         </div>
 
       </div>
+
+      {/* Interactive demo (only for projects that have one) */}
+      {project.hasChurnExplorer && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <h2 className="text-2xl font-bold text-slate-100 mb-2 flex items-center gap-2">
+            <Sparkles className="text-blue-500" size={22} /> Try It Live
+          </h2>
+          <p className="text-slate-400 mb-6 max-w-2xl">
+            An interactive taste of the analysis — explore how each customer segment differs and what drives their churn risk.
+          </p>
+          <ChurnExplorer />
+        </motion.div>
+      )}
 
     </div>
   );
