@@ -51,10 +51,10 @@ const awardsData = [
     date: "2023",
     color: "text-purple-400",
     icon: <Award size={32} className="text-purple-400" />,
-    description: "[Minor entry — kept off the CV but included here for completeness. Briefly describe the website you designed, your role, and what placed it 3rd.]",
-    isPlaceholder: true,
+    description: "Designed a class website in WordPress (using its plugins) as the main designer. It placed 3rd for how clean and polished the design was, even though the top two entries had more features.",
     details: [
-      "[Optional: one or two short points about the design or what you built.]"
+      "Built the site in WordPress, including plugin setup and customization.",
+      "Led the design as the main designer, focusing on a clean, polished look."
     ]
   }
 ];
@@ -91,7 +91,7 @@ const communityData = [
     title: "Community Live-In Program",
     organization: "Bogor, Indonesia",
     date: "1 week",
-    description: "[Describe the Bogor live-in: what the program was, what you did day to day, who you worked with, and what you took away from it.]",
+    description: "A live-in program where we stayed in a village to experience daily life and work alongside the community. I lived with a farming family and helped them farm, and we volunteered at the local primary school teaching English and sharing basic knowledge. At the end of the program we built a public toilet for the village and held a donation event.",
     gallery: [
       { src: "/assets/photos/bogor-1.jpg", alt: "Bogor live-in program", caption: "" },
       // add your real Bogor photos
@@ -101,7 +101,7 @@ const communityData = [
     title: "Orphanage Volunteer",
     organization: "Yayasan Sayap Ibu Indonesia — Bintaro",
     date: "2 weeks",
-    description: "[Describe your time at Yayasan Sayap Ibu: your responsibilities, who you helped, and what the experience meant to you.]",
+    description: "Volunteered alongside the caretakers, helping with daily tasks: cleaning, preparing and giving the children their meals, cooking, and spending time playing with the children.",
     gallery: [
       { src: "/assets/photos/sayapibu-1.jpg", alt: "Yayasan Sayap Ibu volunteering", caption: "" },
       // add your real photos — be mindful of children's privacy/consent before posting identifiable faces
@@ -111,7 +111,7 @@ const communityData = [
     title: "Church Ministry — Singer, Worship Leader, Multimedia & Social Media",
     organization: "Indonesia Bethel Church (Ho Chi Minh City) & GBI Visi Pemulihan (Indonesia)",
     date: "Ongoing",
-    description: "[Describe your church involvement across both communities: the worship-leading and singing, the multimedia and social media work you handle, how long you've served, and the scale of the congregations.]",
+    description: "I've served in church ministry for around 5 years in Indonesia and 3 years in Vietnam, across congregations of roughly 50 people, contributing through worship leading and singing as well as multimedia and social media.",
     gallery: [
       { src: "/assets/photos/church-1.jpg", alt: "Church ministry", caption: "" },
       // add your real worship / ministry photos
@@ -309,7 +309,7 @@ const Awards = () => {
               <div className="text-sm text-blue-400 font-medium mb-3 flex items-center gap-2">
                 <Star size={14} /> {item.organization}
               </div>
-              <Placeholder>{item.description}</Placeholder>
+              <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
               {item.gallery && item.gallery.length > 0 && <Gallery images={item.gallery} />}
             </motion.div>
           ))}

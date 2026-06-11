@@ -33,10 +33,10 @@ const pillars = [
 
 // --- QUICK FACTS (edit freely) ---
 const facts = [
-  { icon: <MapPin size={16} />, label: "Based in", value: "[Your current base — e.g. Ho Chi Minh City → relocating to Jakarta]" },
+  { icon: <MapPin size={16} />, label: "Based in", value: "Ho Chi Minh City, Vietnam — relocating to Jakarta in July 2026" },
   { icon: <GraduationCap size={16} />, label: "Studying", value: "B.Sc. Computer Science, TDTU (Expected Oct 2026)" },
   { icon: <Languages size={16} />, label: "Languages", value: "English (C1), Indonesian (Native)" },
-  { icon: <Sparkles size={16} />, label: "Status", value: "[e.g. Open to July–Dec 2026 internships]" }
+  { icon: <Sparkles size={16} />, label: "Status", value: "Open to July–Dec 2026 internships" }
 ];
 
 const About = () => {
@@ -70,11 +70,18 @@ const About = () => {
         <h2 className="text-2xl font-bold text-slate-100 md:col-span-1">My Story</h2>
         <div className="md:col-span-2 space-y-5">
           <p className="text-slate-400 leading-relaxed">
-            I'm an Indonesian student of Computer Science specializing in Data Science and Research Analytics, currently completing my degree in Vietnam on a full scholarship. My work sits where research meets data — understanding markets and users, then backing those insights with analysis a team can build on.
+            I'm an Indonesian student of Computer Science specializing in Data Science and Research Analytics, currently completing my degree in Vietnam on a full scholarship. My work sits where research meets data, understanding markets and users, then backing those insights with analysis a team can build on.
           </p>
-          <Placeholder>
-            [Write your real story here — in your own voice. Some prompts: What drew you to data and research? What's it like being an Indonesian studying across Vietnam and China? What kind of problems do you love solving? What are you hoping to do next, and why Grab / this kind of role? A few honest paragraphs here will do more than any bullet list.]
-          </Placeholder>
+          <p className="text-slate-400 leading-relaxed">
+            What drew me to data and research is simple: I like understanding the people behind the numbers, not just the numbers themselves. A dataset is never only a dataset to me. It's a market deciding what it wants, a user trying to get something done, a community living a certain way. That curiosity is what turned a computer science degree into a focus on AI, machine learning, NLP, and data visualization, and what makes research the part of the work I enjoy most.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            Studying across Indonesia, Vietnam, and China has shaped how I think. Living away from home taught me to read a new environment quickly, work with people whose context is different from mine, and stay humble about what I don't yet know. It's also why I care so much about the Southeast Asian market specifically. It isn't an abstract case study to me; it's the region I come from and the one I want my work to serve.
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            Next, I want to grow as a research and data analytics professional somewhere my work reaches real people across the region, turning research into decisions that actually improve products and lives. I still have plenty to learn, and that's exactly the kind of challenge I'm looking for.
+          </p>
+          <Placeholder inline>Draft written for you from your notes — read it over and tweak any wording so it sounds fully like you.</Placeholder>
         </div>
       </motion.section>
 

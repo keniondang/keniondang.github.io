@@ -6,7 +6,7 @@ import Logo from '../components/Logo';
 import Gallery from '../components/Gallery';
 
 // --- LINKS (replace with your real LinkedIn / social content link) ---
-const FPT_SOCIAL_URL = "PLACEHOLDER_LINKEDIN_SOCIAL_CONTENT_LINK"; // e.g. an FPT IS LinkedIn post you made
+const FPT_SOCIAL_URL = "https://www.linkedin.com/posts/fpt-fptis-interfisers-ugcPost-7366019971866374146-77Ez/";
 
 // --- DATA ---
 const experiences = [
@@ -16,7 +16,7 @@ const experiences = [
     logo: "PLACEHOLDER_ai_hay_logo", // drop /assets/logos/ai-hay.png here later
     period: "Apr 2026 - Present",
     description: "AI Hay is FAI Tech's flagship AI knowledge discovery platform with 10M+ downloads, ranked #2 in Vietnam for MAUs (Sensor Tower, 2025). As it prepared to launch Imely, an AI companion app, in Indonesia, I served as the primary Indonesian market intelligence resource for the CEO and Product Team, owning the research that shaped product positioning and go-to-market strategy.",
-    longDescription: "[Expand on AI Hay here: tell the fuller story of the research you led, how a typical week looked, how your findings actually changed product decisions, what you learned about the Indonesian market, and how you worked with the CEO, product, marketing, and engineering teams.]",
+    longDescription: "My work at AI Hay spanned three kinds of research: market, product/competitor, and user. On the market side, I studied the AI companion market in Indonesia as our target, including local payment methods and compliance regulations. On the product side, I mapped the top competitor apps in Indonesia, breaking down their features, communities, creator programs, and pros and cons. On the user side, I researched our target audience and personas, found and reached out to relevant Indonesian communities, ran an ID program for the app, and connected with creators for potential collaboration. One concrete outcome: my findings helped shape the decision to position the app as safe-for-work and mainstream rather than following the NSFW direction of some global competitors, which we saw as a stronger, differentiated fit for the Indonesian market. I worked most closely with the product team (finding and reaching out to communities) and the marketing team, and also helped the engineering team by curating data for their TTS system, including text normalization and testing.",
     achievements: [
       "Spearheaded an end-to-end Indonesian market research and viability assessment for Imely, covering market sizing, competitor landscape, consumer behavior, user acquisition, and regulatory compliance.",
       "Conducted product research on direct and indirect AI competitors in Indonesia, mapping the competitive landscape to identify an unaddressed market gap and deliver strategic differentiation recommendations.",
@@ -32,7 +32,7 @@ const experiences = [
     logo: "/assets/logos/fpt.png", // replace with your actual FPT logo file path
     period: "Apr 2025 - Sep 2025",
     description: "FPT Information System is a subsidiary of FPT Corporation, Vietnam's largest publicly listed tech company ($2.47B revenue, 54,000+ employees) serving 3,000+ enterprise and government clients across Southeast Asia. I delivered weekly progress reports to senior stakeholders on automated data pipelines and enterprise BI solutions, and also worked with the HR team to create content for the company's social media and LinkedIn.",
-    longDescription: "[Expand on FPT here: the fuller story of the pipeline and BI work, the scale and messiness of the Splunk data, the technical problems you solved, who consumed your dashboards and what decisions they drove, and what you learned working inside a large enterprise.]",
+    longDescription: "I designed the full pipeline that took messy raw data from Splunk and turned it into clean, attractive Power BI visualizations. The scale was significant: more than 10 tables with entries arriving every second, and the incoming data was genuinely messy. The hardest part, and the problem I'm proudest of solving, was the preprocessing pipeline itself, where many different data types had to be cleaned and loaded reliably into a structured SQL database. The dashboards I built were used by the engineering team to monitor the health of their WiFi and VPN status in real time. Working inside a large enterprise also taught me how clean and well-organized everything is when everyone has a clearly defined role.",
     achievements: [
       "Interpreted and analyzed millions of log records from multiple Splunk sources to identify operational patterns, anomalies, and trends, enabling data-driven decision-making for senior stakeholders.",
       "Designed interactive, live-connected Power BI dashboards on top of a SQL Server model, transforming raw operational data into real-time visual insights that supported ongoing business programs and stakeholder reporting.",

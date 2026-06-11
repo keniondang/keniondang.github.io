@@ -11,13 +11,13 @@ const certifications = [
     issuer: "IBM SkillsBuild",
     logo: "/assets/logos/ibm.png", // replace with your actual IBM logo
     items: ["Data Fundamentals", "Data Literacy", "Data Analytics"],
-    note: "[Explain what these IBM SkillsBuild tracks covered and how you applied them.]"
+    note: "Covered foundational concepts in data and analytics — the essentials I rely on as a base for my research and data work."
   },
   {
     issuer: "Kaggle",
     logo: "/assets/logos/kaggle.png", // replace with your actual Kaggle logo
     items: ["Python", "Pandas", "Data Visualization", "Intro to SQL", "Advanced SQL"],
-    note: "[Explain what you learned in these Kaggle courses and where you put it to use.]"
+    note: "Reinforced core coding fundamentals in Python, Pandas, and SQL from my first two years of university."
   }
 ];
 
@@ -34,7 +34,7 @@ const educationData = [
       // add as many real photos as you have — layout adapts to the count
     ],
     description: "TDTU is a leading research university in Vietnam, ranked Top 501–600 in QS World University Rankings. Final-year student on a full academic scholarship in a fully English-taught program, currently ranked 2nd in Class (Top 7 in Faculty) with a GPA of 8.7/10.0 (~3.7/4.0). Coursework spans Data Science, Machine Learning, Statistics, and Software Engineering.",
-    longDescription: "[Write the fuller TDTU story here: what you actually studied, the courses that mattered most, the kind of projects each led to, what you focused your data-science track on, any research, teams, or standout coursework. This is the website-only depth that expands the one-line CV version.]",
+    longDescription: "At TDTU I'm studying Computer Science with a focus on AI and data. My coursework has spanned AI, machine learning, and NLP, along with big data, data visualization, web development, and cross-platform development. The AI and data subjects are where I've focused most, and they're what shaped my move toward research and data analytics.",
     coursework: [
       "Data Science",
       "Machine Learning",
@@ -60,7 +60,7 @@ const educationData = [
       // add your real SCUT / company-visit photos here
     ],
     description: "Selected for a competitive 2-week AI-focused program with visits to leading Chinese tech companies and cultural exchange with international peers. Authored a research report on 3D Vision Intelligence covering Point Cloud data structures and Visual Odometry algorithms for autonomous navigation.",
-    longDescription: "[Expand the SCUT summer program here: which companies you visited and what stood out, what the AI coursework covered day to day, what your 3D Vision Intelligence research actually involved and concluded, and what you took away from the cultural exchange.]",
+    longDescription: "The summer program included visits to leading Chinese tech companies, and the one that stood out most was Tencent, where seeing the sheer scale of their office and how they work left a strong impression. The coursework covered AI topics including large language models. Beyond the technical side, the cultural exchange and time spent with international peers was a memorable part of the experience.",
     coursework: ["Large Language Models", "3D Vision Intelligence", "Artificial Intelligence"],
     achievements: ["Authored a research report on 3D Vision Intelligence"]
   },
@@ -75,7 +75,7 @@ const educationData = [
       // add your real high-school photos here
     ],
     description: "Ranked 1st in Class with a GPA of 9.3/10.0 under the International Oxford AQA curriculum, completing specialized coursework in basic programming (Python & HTML) and computational logic.",
-    longDescription: "[Expand on Sophos / high school here: what the Oxford AQA track involved, the subjects you specialized in, your first programming experiences, and what set you on the path toward data science.]",
+    longDescription: "My high school followed the Oxford AQA track, with AQA examinations, and I specialized in mathematics and the sciences. This is also where I wrote code for the first time, starting with HTML and web development, and where I joined the competition in which my team built a Python game called Zumath (listed in my projects). That first taste of building something real with code is what set me on the path toward data science.",
     achievements: [
       "Ranked 1st in Class",
       "GPA: 9.3/10.0",

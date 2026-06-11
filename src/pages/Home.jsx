@@ -13,7 +13,7 @@ import myProfilePic from '../assets/1.png';
 import AcademicJourney from '../components/AcademicJourney';
 
 // --- LINKS (replace this with your real Google Drive resume link) ---
-const RESUME_URL = "PLACEHOLDER_GOOGLE_DRIVE_RESUME_LINK"; // e.g. "https://drive.google.com/file/d/.../view"
+const RESUME_URL = "https://drive.google.com/file/d/1KkugWqVZDvaGH4qhCRRaD6uW_Y8uKDGr/view?usp=sharing";
 
 // --- COMPONENTS: SPOTLIGHT CARD (Unchanged) ---
 const SpotlightCard = ({ children, className = "" }) => {

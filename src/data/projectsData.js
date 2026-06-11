@@ -162,6 +162,6 @@ export const projectsData = [
     ],
     tech: ["PHP", "MySQL", "JavaScript", "AJAX", "jQuery", "Bootstrap", "Chart.js", "DataTables.js"],
     links: { github: "https://github.com/keniondang", demo: null, report: null },
-    metrics: "Course Final Project (TDTU)"
+    metrics: "Course Final Project (TDTU) · Team · Graded 9.5"
   }
 ];
