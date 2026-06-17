@@ -7,18 +7,18 @@ import Gallery from '../components/Gallery';
 // --- DATA (Extracted from your CV) ---
 const awardsData = [
   {
-    title: "2nd Place — Data Storm 2025 Data Science Contest",
+    title: "2nd Place · Data Storm 2025 Data Science Contest",
     organization: "Vietnam Datathon",
     location: "Ho Chi Minh City, Vietnam",
     date: "Jan 2026",
     color: "text-yellow-400", // Gold
     icon: <Trophy size={32} className="text-yellow-400" />,
-    description: "Led a team of 4 to 2nd place among 134 competing teams, engineering a financial regression pipeline on banking datasets to forecast transaction liquidity and spending power — ranking 1st in the 24-hour Hackathon sprint.",
+    description: "Led a team of 4 to 2nd place among 134 competing teams, engineering a financial regression pipeline on banking datasets to forecast transaction liquidity and spending power, ranking 1st in the 24-hour Hackathon sprint.",
     gallery: [
       { src: "/assets/photos/datathon-1.jpg", alt: "Data Storm 2025", caption: "" },
       { src: "/assets/photos/datathon-2.jpg", alt: "Data Storm 2025", caption: "" },
       { src: "/assets/photos/datathon-3.jpg", alt: "Data Storm 2025", caption: "" },
-      // you have 3+ for this one — add the rest; 5+ auto-collapses into a "+N more" tile
+      // you have 3+ for this one ,  add the rest; 5+ auto-collapses into a "+N more" tile
     ],
     details: [
       "Built a full-stack analytics engine (ReactJS, FastAPI) for automated decisioning.",
@@ -36,7 +36,7 @@ const awardsData = [
     description: "Led a team of 5 in applying data-informed research methodology to develop and deploy a Python-based learning platform, validating learning outcomes through structured user testing.",
     gallery: [
       { src: "/assets/photos/seameo-1.jpg", alt: "SEAMEO RECSAM congress", caption: "" },
-      // you have 1 for this one — it renders as a single featured photo
+      // you have 1 for this one ,  it renders as a single featured photo
     ],
     details: [
       "Applied Realistic Mathematics Education (RME) principles to gamify STEM learning.",
@@ -45,7 +45,7 @@ const awardsData = [
     ]
   },
   {
-    title: "3rd Place — Class Website Design Competition",
+    title: "3rd Place · Class Website Design Competition",
     organization: "Faculty of Information Technology, TDTU",
     location: "Ho Chi Minh City, Vietnam",
     date: "2023",
@@ -69,7 +69,7 @@ const activitiesData = [
     description: "Assisted the Director of Ceremony in coordinating the full event flow for the PNT Christmas 2025 & New Year 2026 celebration, attended by 800+ guests from 55 Tonsea community groups across Jakarta and covered by national media.",
     gallery: [
       { src: "/assets/photos/pnt-1.jpg", alt: "PNT celebration", caption: "" },
-      // add your real PNT event photos — layout adapts to the count
+      // add your real PNT event photos ,  layout adapts to the count
     ]
   },
   {
@@ -99,16 +99,16 @@ const communityData = [
   },
   {
     title: "Orphanage Volunteer",
-    organization: "Yayasan Sayap Ibu Indonesia — Bintaro",
+    organization: "Yayasan Sayap Ibu Indonesia, Bintaro",
     date: "2 weeks",
     description: "Volunteered alongside the caretakers, helping with daily tasks: cleaning, preparing and giving the children their meals, cooking, and spending time playing with the children.",
     gallery: [
       { src: "/assets/photos/sayapibu-1.jpg", alt: "Yayasan Sayap Ibu volunteering", caption: "" },
-      // add your real photos — be mindful of children's privacy/consent before posting identifiable faces
+      // add your real photos ,  be mindful of children's privacy/consent before posting identifiable faces
     ]
   },
   {
-    title: "Church Ministry — Singer, Worship Leader, Multimedia & Social Media",
+    title: "Church Ministry · Singer, Worship Leader, Multimedia & Social Media",
     organization: "Indonesia Bethel Church (Ho Chi Minh City) & GBI Visi Pemulihan (Indonesia)",
     date: "Ongoing",
     description: "I've served in church ministry for around 5 years in Indonesia and 3 years in Vietnam, across congregations of roughly 50 people, contributing through worship leading and singing as well as multimedia and social media.",
@@ -222,7 +222,7 @@ const Awards = () => {
           </span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl">
-          Recognition, leadership, and service — from national data science stages to community and church work across Indonesia and Vietnam.
+          Recognition, leadership, and service, from national data science stages to community and church work across Indonesia and Vietnam.
         </p>
       </motion.div>
 

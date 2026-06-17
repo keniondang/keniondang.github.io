@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin, BookOpen, Award, Star, BadgeCheck } from 'lucide-react';
-import Placeholder from '../components/Placeholder';
 import Logo from '../components/Logo';
 import Gallery from '../components/Gallery';
 
@@ -11,7 +10,7 @@ const certifications = [
     issuer: "IBM SkillsBuild",
     logo: "/assets/logos/ibm.png", // replace with your actual IBM logo
     items: ["Data Fundamentals", "Data Literacy", "Data Analytics"],
-    note: "Covered foundational concepts in data and analytics — the essentials I rely on as a base for my research and data work."
+    note: "Covered foundational concepts in data and analytics, the essentials I rely on as a base for my research and data work."
   },
   {
     issuer: "Kaggle",
@@ -31,7 +30,7 @@ const educationData = [
     period: "Expected Oct 2026",
     gallery: [
       { src: "/assets/photos/tdtu-1.jpg", alt: "TDTU campus / photo", caption: "" },
-      // add as many real photos as you have — layout adapts to the count
+      // add as many real photos as you have ,  layout adapts to the count
     ],
     description: "TDTU is a leading research university in Vietnam, ranked Top 501–600 in QS World University Rankings. Final-year student on a full academic scholarship in a fully English-taught program, currently ranked 2nd in Class (Top 7 in Faculty) with a GPA of 8.7/10.0 (~3.7/4.0). Coursework spans Data Science, Machine Learning, Statistics, and Software Engineering.",
     longDescription: "At TDTU I'm studying Computer Science with a focus on AI and data. My coursework has spanned AI, machine learning, and NLP, along with big data, data visualization, web development, and cross-platform development. The AI and data subjects are where I've focused most, and they're what shaped my move toward research and data analytics.",
@@ -65,7 +64,7 @@ const educationData = [
     achievements: ["Authored a research report on 3D Vision Intelligence"]
   },
   {
-    degree: "High School Diploma — Mathematics & Natural Sciences",
+    degree: "High School Diploma, Mathematics & Natural Sciences",
     institution: "Sophos School Indonesia",
     logo: "/assets/logos/sophos.png", // replace with your actual Sophos logo
     location: "Tangerang, Indonesia",
@@ -145,7 +144,13 @@ const EducationCard = ({ data, index }) => {
 
           {/* Expanded narrative (website-only depth) */}
           {data.longDescription && (
-            <Placeholder>{data.longDescription}</Placeholder>
+            <div className="mb-6 rounded-xl bg-slate-950/40 border border-slate-800/80 p-5 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50" />
+              <div className="flex items-center gap-2 mb-2 text-blue-400 text-xs font-bold uppercase tracking-wider">
+                <BookOpen size={13} /> More about this
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed">{data.longDescription}</p>
+            </div>
           )}
 
           {/* Achievements */}
@@ -182,7 +187,7 @@ const EducationCard = ({ data, index }) => {
             </div>
           )}
 
-          {/* Photo Gallery (adaptive — flexes to however many photos you add) */}
+          {/* Photo Gallery (adaptive ,  flexes to however many photos you add) */}
           {data.gallery && data.gallery.length > 0 && (
             <div className="mt-6">
               <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Gallery</h4>
@@ -263,9 +268,7 @@ const Education = () => {
                 ))}
               </div>
               {cert.note && (
-                <div className="mt-4">
-                  <Placeholder>{cert.note}</Placeholder>
-                </div>
+                <p className="mt-4 text-sm text-slate-500 leading-relaxed italic">{cert.note}</p>
               )}
             </motion.div>
           ))}

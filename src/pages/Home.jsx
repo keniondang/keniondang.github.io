@@ -118,7 +118,7 @@ const Home = () => {
 
           {/* Subtext */}
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-slate-300/80 mb-8 max-w-xl leading-relaxed">
-            A <strong>Research & Data Analytics</strong> specialist with internship experience across two fast-growing tech companies — owning Indonesian market research for an AI product launch, and building enterprise data pipelines and BI at one of Vietnam's largest tech firms. I turn large-scale data into insights and decisions that move products forward.
+            A <strong>Research & Data Analytics</strong> specialist with internship experience across two fast-growing tech companies. I owned Indonesian market research for an AI product launch, and built enterprise data pipelines and BI at one of Vietnam's largest tech firms. I turn large-scale data into insights and decisions that move products forward.
           </motion.p>
 
           {/* Buttons */}
@@ -203,7 +203,7 @@ const Home = () => {
         </div>
         <div className="md:w-1/2">
           <p className="text-lg text-slate-400 leading-relaxed mb-6">
-            My projects go beyond the dashboard — from a churn-prediction system on a 46M+ record dataset, to a market-research deep dive on Indonesian digital consumers, to an award-winning financial forecasting engine built in a 24-hour datathon sprint. Each one turns large-scale data into something a business can actually act on.
+            My projects go beyond the dashboard, spanning a churn-prediction system on a 46M+ record dataset, to a market-research deep dive on Indonesian digital consumers, to an award-winning financial forecasting engine built in a 24-hour datathon sprint. Each one turns large-scale data into something a business can actually act on.
           </p>
           <Link to="/projects">
             <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] inline-flex items-center gap-2 transform hover:-translate-y-1">
@@ -217,7 +217,7 @@ const Home = () => {
       <section id="education" className="py-28 px-6 md:px-20 border-t border-slate-800/50 bg-slate-950/50 relative z-20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
 
-          {/* Centered intro — distinct from the side-by-side sections above */}
+          {/* Centered intro ,  distinct from the side-by-side sections above */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ const Home = () => {
               An international <span className="text-slate-500">academic path.</span>
             </h2>
             <p className="text-lg text-slate-400 leading-relaxed">
-              An Indonesian studying abroad on a full scholarship, I've built my education across three countries — from an Oxford AQA high-school track at home, to an AI summer program in China, to a Computer Science degree in Vietnam (ranked 2nd in class). Three cultures, three classrooms, one throughline: learning to read different markets and work with people from anywhere.
+              An Indonesian studying abroad on a full scholarship, I've built my education across three countries, from an Oxford AQA high-school track at home, to an AI summer program in China, to a Computer Science degree in Vietnam (ranked 2nd in class). Three cultures, three classrooms, one throughline: learning to read different markets and work with people from anywhere.
             </p>
           </motion.div>
 

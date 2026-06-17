@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, ChevronRight, Award, Linkedin, ExternalLink } from 'lucide-react';
-import Placeholder from '../components/Placeholder';
+import { Briefcase, Calendar, ChevronRight, Award, Linkedin, ExternalLink, BookOpen } from 'lucide-react';
 import Logo from '../components/Logo';
 import Gallery from '../components/Gallery';
 
@@ -98,8 +97,12 @@ const ExperienceCard = ({ data, index }) => {
 
         {/* Expanded narrative (website-only depth) */}
         {data.longDescription && (
-          <div className="mb-6">
-            <Placeholder>{data.longDescription}</Placeholder>
+          <div className="mb-6 rounded-xl bg-slate-950/40 border border-slate-800/80 p-5 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50" />
+            <div className="flex items-center gap-2 mb-2 text-blue-400 text-xs font-bold uppercase tracking-wider">
+              <BookOpen size={13} /> Behind the work
+            </div>
+            <p className="text-sm text-slate-400 leading-relaxed">{data.longDescription}</p>
           </div>
         )}
 
@@ -173,7 +176,7 @@ const Experience = () => {
           </span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl">
-          From market and product research to scalable data systems — turning large-scale data into insights and decisions that move products forward.
+          From market and product research to scalable data systems, turning large-scale data into insights and decisions that move products forward.
         </p>
       </motion.div>
 

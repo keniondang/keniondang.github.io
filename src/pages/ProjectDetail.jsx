@@ -159,7 +159,7 @@ const ProjectDetail = () => {
                     title="Replace this with the project's Google Drive report link in projectsData.js"
                     className="flex items-center gap-3 text-amber-300/80 p-2 rounded-lg border border-dashed border-amber-500/40 bg-amber-500/5 text-sm"
                   >
-                    <HardDrive size={20} /> Full Report — add Drive link
+                    <HardDrive size={20} /> Full Report (add Drive link)
                   </div>
                 ) : (
                   <a href={project.links.report} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors p-2 hover:bg-slate-800 rounded-lg">
@@ -200,7 +200,7 @@ const ProjectDetail = () => {
             <Sparkles className="text-blue-500" size={22} /> Try It Live
           </h2>
           <p className="text-slate-400 mb-6 max-w-2xl">
-            An interactive taste of the analysis — explore how each customer segment differs and what drives their churn risk.
+            An interactive taste of the analysis. Explore how each customer segment differs and what drives their churn risk.
           </p>
           <ChurnExplorer />
         </motion.div>

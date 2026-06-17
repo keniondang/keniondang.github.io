@@ -41,7 +41,7 @@ export const projectsData = [
     tagline: "Mapping Indonesia's digital market: e-commerce, app rankings, and Gen Z payment behavior.",
     category: "Market Research",
     timeSpan: "2025",
-    // TODO: replace with real screenshots (Power BI / EDA charts) — /assets/projects/indo-1.png etc.
+    // TODO: replace with real screenshots (Power BI / EDA charts) ,  /assets/projects/indo-1.png etc.
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop",
@@ -64,11 +64,11 @@ export const projectsData = [
   },
   {
     id: "datathon-stormcast",
-    title: "StormCast — Financial Regression & Decisioning Engine",
+    title: "StormCast: Financial Regression & Decisioning Engine",
     tagline: "2nd of 134 teams at Data Storm 2025; 1st in the 24-hour modeling sprint.",
     category: "Predictive Analytics",
     timeSpan: "Jan 2026",
-    // TODO: replace with real screenshots (StormCast dashboard / charts) — /assets/projects/storm-1.png etc.
+    // TODO: replace with real screenshots (StormCast dashboard / charts) ,  /assets/projects/storm-1.png etc.
     image: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=2670&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=2670&auto=format&fit=crop"
@@ -86,7 +86,7 @@ export const projectsData = [
     ],
     tech: ["Python", "LightGBM", "Causal Inference", "FastAPI", "ReactJS", "Power BI"],
     links: { github: "https://github.com/keniondang", demo: null, report: "PLACEHOLDER_DRIVE_REPORT_stormcast" },
-    metrics: "Vietnam Datathon — 2nd / 134 teams"
+    metrics: "Vietnam Datathon · 2nd of 134 teams"
   },
   {
     id: "predictive-pricing-inventory",
@@ -94,14 +94,14 @@ export const projectsData = [
     tagline: "Forecasting optimal buy/sell prices and automating store-level stocking decisions.",
     category: "Predictive Analytics",
     timeSpan: "2025",
-    // TODO: replace with real screenshots — /assets/projects/pricing-1.png etc.
+    // TODO: replace with real screenshots ,  /assets/projects/pricing-1.png etc.
     image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2670&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2670&auto=format&fit=crop"
     ],
     description: "An XGBoost & Random Forest pipeline that predicts optimal buy/sell prices and sales volumes, paired with a FastAPI optimization engine that automates store-level buy/reject decisions.",
     summary: [
-      "Pricing and stocking decisions in a fast-moving resale market are hard to get right by hand — they depend on product age, holding costs, and shifting demand.",
+      "Pricing and stocking decisions in a fast-moving resale market are hard to get right by hand. They depend on product age, holding costs, and shifting demand.",
       "I built a predictive pipeline using XGBoost and Random Forest to forecast optimal buy/sell prices and sales volumes, modeling factors like phone age, holding costs, and historical trends. On top of it, I deployed a Greedy Search optimization engine via FastAPI that automates store-level 'buy' or 'reject' decisions based on real-time stock levels and forecasted demand."
     ],
     achievables: [
@@ -115,11 +115,11 @@ export const projectsData = [
   },
   {
     id: "zumath-educational-game",
-    title: "Zumath — Python Educational Game",
+    title: "Zumath: Python Educational Game",
     tagline: "A Zuma-inspired math game that reinforces concepts through gamified play.",
     category: "Software / EdTech",
     timeSpan: "2022",
-    // TODO: replace with real screenshots — /assets/projects/zumath-1.png etc.
+    // TODO: replace with real screenshots ,  /assets/projects/zumath-1.png etc.
     image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=2670&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=2670&auto=format&fit=crop"
@@ -127,7 +127,7 @@ export const projectsData = [
     description: "A Python-based math learning game inspired by Zuma, built for the SEAMEO competition to make mathematics engaging through gamification.",
     summary: [
       "Built for the SEAMEO competition (associated with Sophos School Indonesia), Zumath set out to make learning math genuinely fun rather than a chore.",
-      "I developed a Python-based math learning game inspired by Zuma, blending educational content with arcade-style gameplay. Pygame handled the game physics, Tkinter the interface, and NumPy the mathematical computations behind the puzzles — all designed to reinforce mathematical concepts through play."
+      "I developed a Python-based math learning game inspired by Zuma, blending educational content with arcade-style gameplay. Pygame handled the game physics, Tkinter the interface, and NumPy the mathematical computations behind the puzzles, all designed to reinforce mathematical concepts through play."
     ],
     achievables: [
       "Developed a Python-based math learning game inspired by Zuma, integrating educational gameplay.",
@@ -144,14 +144,14 @@ export const projectsData = [
     tagline: "A full POS system for sales, inventory, and employees with real-time analytics.",
     category: "Full-Stack / Web",
     timeSpan: "2024",
-    // TODO: replace with real screenshots — /assets/projects/pos-1.png etc.
+    // TODO: replace with real screenshots ,  /assets/projects/pos-1.png etc.
     image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=2670&auto=format&fit=crop",
     gallery: [
       "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=2670&auto=format&fit=crop"
     ],
     description: "A web-based POS system for managing sales, inventory, and employees, with secure authentication, real-time transactions, and interactive analytics.",
     summary: [
-      "Built as the final project for TDTU's Web Programming & Application course, this POS system covers the full retail workflow — sales, inventory, and staff management — in one web app.",
+      "Built as the final project for TDTU's Web Programming & Application course, this POS system covers the full retail workflow (sales, inventory, and staff management) in one web app.",
       "I implemented secure login with admin-controlled account creation and email-based authentication, a real-time transaction system with dynamic cart updates and PDF invoice generation, and interactive sales reports powered by Chart.js and DataTables.js for real-time analytics."
     ],
     achievables: [

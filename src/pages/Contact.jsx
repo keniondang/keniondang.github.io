@@ -26,7 +26,7 @@ const Contact = () => {
     // No Formspree configured -> open the user's mail client as a fallback.
     if (!formReady) {
       const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+      const body = encodeURIComponent(`${form.message}\n\nFrom ${form.name} (${form.email})`);
       window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
       return;
     }
@@ -107,7 +107,7 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Message form (no <form> tag — uses click handler) */}
+        {/* Message form (no <form> tag ,  uses click handler) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ const Contact = () => {
               {status === 'sending' ? 'Sending…' : formReady ? 'Send Message' : 'Open in Email'}
             </button>
 
-            {status === 'sent' && <p className="text-sm text-green-400">Thanks — your message was sent.</p>}
+            {status === 'sent' && <p className="text-sm text-green-400">Thanks, your message was sent.</p>}
             {status === 'error' && <p className="text-sm text-red-400">Something went wrong. Please email me directly.</p>}
           </div>
         </motion.div>
