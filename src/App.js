@@ -15,6 +15,7 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Education from './pages/Education';
 import Awards from './pages/Awards';
+import About from './pages/About';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
         <main className="flex-grow relative z-10 pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />

@@ -1,12 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, BookOpen, Award, Star } from 'lucide-react';
+import { Calendar, MapPin, BookOpen, Award, Star } from 'lucide-react';
+import ImageCarousel from '../components/ImageCarousel';
 
 // --- DATA (Replace placeholders with your real CV info) ---
 const educationData = [
   {
     degree: "Bachelor of Science in Computer Science",
     institution: "Ton Duc Thang University", // Replace with your actual university
+    logo: `${process.env.PUBLIC_URL}/images/logos/tdtu.jpg`,
+    gallery: [
+      `${process.env.PUBLIC_URL}/images/education/tdtu-1.jpg`,
+      `${process.env.PUBLIC_URL}/images/education/tdtu-2.jpg`,
+      `${process.env.PUBLIC_URL}/images/education/tdtu-3.jpg`
+    ],
     location: "Ho Chi Minh City, Vietnam",
     period: "Oct 2022 -  Oct 2026 (Expected)",
     // gpa: "3.6/4.0", // Uncomment if you want to display GPA
@@ -28,7 +35,13 @@ const educationData = [
   {
     degree: "SCUT Global Engineering Summer Program",
     institution: "South China University of Technology", // Replace with your summer school
-    location: "Guangzhou, China", 
+    logo: `${process.env.PUBLIC_URL}/images/logos/scut.jpg`,
+    gallery: [
+      `${process.env.PUBLIC_URL}/images/education/scut-1.jpg`,
+      `${process.env.PUBLIC_URL}/images/education/scut-2.jpg`,
+      `${process.env.PUBLIC_URL}/images/education/scut-3.jpg`
+    ],
+    location: "Guangzhou, China",
     period: "Jul 2024",
     description: "Joined an intensive 2-week summer program, gaining hands-on experience in cutting-edge technologies through courses specializing in Artificial Intelligence and industry visits to big China tech companies. Engaged in cultural exchange and connecting with international peers. Completed a comprehensive research report on 3D Vision Intelligence, analyzing Point Cloud data structures and Visual Odometry algorithms for autonomous navigation systems.",
     coursework: ["Large Language Models", "3D Vision Intelligence", "Artificial Intelligence"],
@@ -37,6 +50,7 @@ const educationData = [
   {
     degree: "High School Diploma, Specialization in Mathematics and Natural Sciences",
     institution: "Sophos School Indonesia", // Replace with your high school
+    logo: `${process.env.PUBLIC_URL}/images/logos/sophos-school.jpg`,
     location: "Tangerang, Indonesia",
     period: " Jun 2019 - Jun 2022",
     description: "Ranked 1st in Class with the GPA of 9.3/10.0 under the International Oxford AQA Curriculum, completing specialized coursework in basic programming (Python & HTML) and computational logic.",
@@ -65,8 +79,8 @@ const EducationCard = ({ data, index }) => {
       <div className="flex flex-col md:flex-row gap-8 items-start">
         
         {/* Icon Box */}
-        <div className="hidden md:flex flex-shrink-0 w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 items-center justify-center shadow-lg group-hover:border-blue-500/50 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300 relative z-10">
-          <GraduationCap size={32} className="text-blue-500" />
+        <div className="hidden md:flex flex-shrink-0 w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 items-center justify-center shadow-lg group-hover:border-blue-500/50 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300 relative z-10 overflow-hidden">
+          <img src={data.logo} alt={`${data.institution} logo`} className="w-full h-full object-cover" />
         </div>
 
         {/* Card Content */}
@@ -103,6 +117,13 @@ const EducationCard = ({ data, index }) => {
           <p className="text-slate-400 leading-relaxed mb-6 border-l-2 border-blue-500/30 pl-4">
             {data.description}
           </p>
+
+          {/* Gallery */}
+          {data.gallery && (
+            <div className="mb-6">
+              <ImageCarousel images={data.gallery} alt={data.institution} heightClass="h-48 md:h-56" />
+            </div>
+          )}
 
           {/* Achievements */}
           {data.achievements && (

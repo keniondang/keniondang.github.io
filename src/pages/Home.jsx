@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, Cpu, Terminal, Database, Code, 
-  ChevronsDown, Sparkles
+import {
+  ArrowRight, Cpu, Terminal, Database, Code,
+  ChevronsDown, Sparkles, Users
 } from 'lucide-react';
 
 // --- IMPORT YOUR IMAGE ---
@@ -60,6 +60,7 @@ const itemVariants = {
 };
 
 const skills = [
+  { category: "Product & Strategy", icon: <Users size={20} />, desc: "Research → Decisions", items: ["Stakeholder Management", "Competitive Research", "Retention Strategy", "Market Sizing", "Go-To-Market", "Localization QA"] },
   { category: "Machine Learning", icon: <Cpu size={20} />, desc: "Predictive Models & NLP", items: ["XGBoost", "LightGBM", "CatBoost", "Random Forest", "Logistic Regression", "KMeans", "Collaborative Filtering", "Matrix Factorization", "SHAP"] },
   { category: "Engineering", icon: <Terminal size={20} />, desc: "Full-Stack Deployment", items: ["FastAPI", "React.js", "Docker", "CI/CD", "CSS", "Git"] },
   { category: "Data Systems", icon: <Database size={20} />, desc: "High-Volume Pipelines", items: ["SSAS Tabular Models", "Massive Datasets", "Power BI", "SSAS", "n8n", "ETL Pipelines"] },
@@ -104,16 +105,15 @@ const Home = () => {
 
           {/* Headline */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-8xl font-bold text-slate-100 mb-6 leading-[1.1] tracking-tight">
-            Building systems that <br />
+            I turn data into <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 animate-gradient bg-300%">
-              bridge the gap.
+              decisions people act on.
             </span>
           </motion.h1>
 
           {/* Subtext */}
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-slate-300/80 mb-8 max-w-xl leading-relaxed">
-            I combine <strong>Data Science</strong> with <strong>Full-Stack Engineering</strong> to turn raw numbers into profit-driving applications.
-            From analyzing massive datasets to deploying scalable web apps.
+            I run product operations at an AI company across four Asian markets, turning churn models and competitor research into shipped features — backed by the <strong>Data Science</strong> and <strong>Full-Stack Engineering</strong> to build it myself.
           </motion.p>
 
           {/* Buttons */}
@@ -151,11 +151,11 @@ const Home = () => {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Technical Arsenal</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Skills & Toolkit</h2>
             <div className="h-1 w-20 bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {skills.map((skill, idx) => (
               <motion.div
                 key={idx}

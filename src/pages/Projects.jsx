@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, TrendingUp } from 'lucide-react';
+import { ExternalLink, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom'; // Import Link
 
 // IMPORT DATA

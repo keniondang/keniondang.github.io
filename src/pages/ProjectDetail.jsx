@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ArrowLeft, Github, ExternalLink, Calendar, 
-  FileText, ChevronLeft, ChevronRight, Layers, CheckCircle 
+import {
+  ExternalLink, Calendar,
+  FileText, ChevronLeft, ChevronRight, Layers, CheckCircle
 } from 'lucide-react';
+import { GithubIcon } from '../components/BrandIcons';
 
 // Import your data
 import { projectsData } from '../data/projectsData';
@@ -141,7 +142,7 @@ const ProjectDetail = () => {
             <div className="space-y-3">
               {project.links.github && (
                 <a href={project.links.github} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors p-2 hover:bg-slate-800 rounded-lg">
-                  <Github size={20} /> Source Code
+                  <GithubIcon size={20} /> Source Code
                 </a>
               )}
               {project.links.demo && (

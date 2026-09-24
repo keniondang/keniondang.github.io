@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Calendar, MapPin, Award, Star, Crown } from 'lucide-react';
+import { Trophy, Calendar, MapPin, Award, Star, Crown, Users, Music } from 'lucide-react';
+import ImageCarousel from '../components/ImageCarousel';
 
 // --- DATA (Extracted from your CV) ---
 const awardsData = [
@@ -11,11 +12,16 @@ const awardsData = [
     date: "January 2026",
     color: "text-yellow-400", // Gold
     icon: <Trophy size={32} className="text-yellow-400" />,
-    description: "Led a team of four to secure 2nd place among 134 teams. Engineered a Financial Regression pipeline on banking datasets that ranked 1st in modeling accuracy.",
+    gallery: [
+      `${process.env.PUBLIC_URL}/images/awards/data-storm-1.jpg`,
+      `${process.env.PUBLIC_URL}/images/awards/data-storm-2.jpg`,
+      `${process.env.PUBLIC_URL}/images/awards/data-storm-3.jpg`
+    ],
+    description: "Led a team of four to secure 2nd place by engineering a financial regression pipeline on banking datasets that ranked 1st in modeling accuracy and architected an Automated Decisioning Engine",
     details: [
-      "Architected 'StormCast', a full-stack Automated Decisioning Engine (ReactJS, FastAPI).",
-      "Developed Causal LightGBM logic to optimize risk-adjusted margins by 10-15% under uncertainty.",
-      "Forecasted transaction liquidity and spending power with high precision."
+      "- Architected 'StormCast', a full-stack Automated Decisioning Engine (ReactJS, FastAPI).",
+      "- Developed Causal LightGBM logic to optimize risk-adjusted margins by 10-15% under uncertainty.",
+      "- Forecasted transaction liquidity and spending power with high precision."
     ]
   },
   {
@@ -23,13 +29,18 @@ const awardsData = [
     organization: "SEAMEO RECSAM (12th Regional Congress)",
     location: "George Town, Malaysia",
     date: "March 2022",
-    color: "text-blue-400", // Blue/Silver
+    color: "text-blue-300", // Blue/Silver
     icon: <Award size={32} className="text-blue-400" />,
+    gallery: [
+      `${process.env.PUBLIC_URL}/images/awards/seameo-1.jpg`,
+      `${process.env.PUBLIC_URL}/images/awards/seameo-2.jpg`,
+      `${process.env.PUBLIC_URL}/images/awards/seameo-3.jpg`
+    ],
     description: " Recognized for developing an educational Python game that applies Realistic Mathematics Education (RME) principles to support basic math learning.",
     details: [
-      "Led a team of five in the Search for SEAMEO Young Scientist.",
-      "Integrated real-world examples into game logic to gamify STEM education.",
-      "Documented the pedagogical approach in a comprehensive research report."
+      "- Led a team of five in the Search for SEAMEO Young Scientist.",
+      "- Integrated real-world examples into game logic to gamify STEM education.",
+      "- Documented the pedagogical approach in a comprehensive research report."
     ]
   },
   {
@@ -39,11 +50,46 @@ const awardsData = [
     date: "April 2023",
     color: "text-purple-400", // Purple
     icon: <Crown size={32} className="text-purple-400" />,
+    gallery: [
+      `${process.env.PUBLIC_URL}/images/awards/website-design-1.jpg`,
+      `${process.env.PUBLIC_URL}/images/awards/website-design-2.jpg`,
+      `${process.env.PUBLIC_URL}/images/awards/website-design-3.jpg`
+    ],
     description: "Awarded for designing an intuitive and visually appealing website for the class.",
     details: [
-      "Designed a class website with wordpress.",
-      "Directed the overall design, performance, and user experience of the website."
+      "-Designed a class website with wordpress.",
+      "- Directed the overall design, performance, and user experience of the website."
     ]
+  }
+];
+
+// --- DATA: ORGANIZATION & ACTIVITIES ---
+const activitiesData = [
+  {
+    title: "Event Coordinator",
+    organization: "Paimuluan Ne Tonsea (PNT) Jakarta Year-End Celebration",
+    location: "Jakarta, Indonesia",
+    date: "January 2026",
+    icon: <Users size={24} className="text-blue-400" />,
+    gallery: [
+      `${process.env.PUBLIC_URL}/images/activities/pnt-event-1.jpg`,
+      `${process.env.PUBLIC_URL}/images/activities/pnt-event-2.jpg`,
+      `${process.env.PUBLIC_URL}/images/activities/pnt-event-3.jpg`
+    ],
+    description: "Coordinated event flow for an 800+ guest celebration spanning 55 community groups to a fixed date, with national media coverage."
+  },
+  {
+    title: "Singer & Worship Leader",
+    organization: "KJRI Ho Chi Minh City Christmas Celebration",
+    location: "Ho Chi Minh City, Vietnam",
+    date: "Dec 2023 - Dec 2025",
+    icon: <Music size={24} className="text-blue-400" />,
+    gallery: [
+      `${process.env.PUBLIC_URL}/images/activities/kjri-worship-1.jpg`,
+      `${process.env.PUBLIC_URL}/images/activities/kjri-worship-2.jpg`,
+      `${process.env.PUBLIC_URL}/images/activities/kjri-worship-3.jpg`
+    ],
+    description: "Led worship for three consecutive years at the Indonesian Consulate General's annual Christmas celebration."
   }
 ];
 
@@ -101,6 +147,13 @@ const AwardCard = ({ data, index }) => {
             {data.description}
           </p>
 
+          {/* Gallery */}
+          {data.gallery && (
+            <div className="mb-6">
+              <ImageCarousel images={data.gallery} alt={data.title} heightClass="h-48 md:h-56" />
+            </div>
+          )}
+
           {/* Key Details / Highlights */}
           {data.details && (
             <div className="bg-slate-950/30 rounded-xl p-4 border border-slate-800/50">
@@ -121,13 +174,45 @@ const AwardCard = ({ data, index }) => {
   );
 };
 
+const ActivityCard = ({ data, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="flex flex-col md:flex-row gap-6 items-start bg-slate-900/40 border border-slate-800 backdrop-blur-md rounded-2xl p-6 hover:border-blue-500/30 transition-all duration-300"
+    >
+      <div className="hidden md:flex flex-shrink-0 w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 items-center justify-center">
+        {data.icon}
+      </div>
+      <div className="flex-grow w-full">
+        <div className="flex flex-col md:flex-row justify-between md:items-start gap-2 mb-2">
+          <div>
+            <h3 className="text-lg font-bold text-slate-100">{data.title}</h3>
+            <p className="text-slate-400 text-sm">{data.organization}</p>
+          </div>
+          <div className="flex flex-col items-start md:items-end gap-1 text-xs text-slate-500 font-mono shrink-0">
+            <div className="flex items-center gap-1"><Calendar size={12} /> {data.date}</div>
+            <div className="flex items-center gap-1"><MapPin size={12} /> {data.location}</div>
+          </div>
+        </div>
+        <p className="text-slate-400 text-sm leading-relaxed mb-4">{data.description}</p>
+        {data.gallery && (
+          <ImageCarousel images={data.gallery} alt={data.title} heightClass="h-40" />
+        )}
+      </div>
+    </motion.div>
+  );
+};
+
 const Awards = () => {
   return (
     // Layout aligned exactly with Projects/Experience/Education
     <div className="min-h-screen pt-20 px-6 md:px-20 max-w-6xl mx-auto pb-20">
-      
+
       {/* Page Header */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-16"
@@ -139,7 +224,7 @@ const Awards = () => {
           </span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl">
-          Recognition for my contributions in Data Science, Software Engineering, and Educational Technology on national and regional stages.
+          Recognition for my contributions in Data Science, Software Engineering, and Educational Technology on national and regional stages, alongside the community leadership work I do outside of it.
         </p>
       </motion.div>
 
@@ -147,6 +232,23 @@ const Awards = () => {
       <div className="flex flex-col gap-10">
         {awardsData.map((award, idx) => (
           <AwardCard key={idx} data={award} index={idx} />
+        ))}
+      </div>
+
+      {/* Organization & Activities */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-24 mb-10"
+      >
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-100 mb-3">Organization & Activities</h2>
+        <div className="h-1 w-16 bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
+      </motion.div>
+
+      <div className="flex flex-col gap-6">
+        {activitiesData.map((activity, idx) => (
+          <ActivityCard key={idx} data={activity} index={idx} />
         ))}
       </div>
 

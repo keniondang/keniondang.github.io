@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './BrandIcons';
 
 const Footer = () => {
   return (
@@ -11,9 +12,9 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-8 mb-6">
           {[
-            { icon: Github, link: "https://github.com/keniondang" },
-            { icon: Linkedin, link: "https://linkedin.com/in/keniondang" },
-            { icon: Mail, link: "mailto:your.keninondang@gmail.com" }
+            { icon: GithubIcon, link: "https://github.com/keniondang" },
+            { icon: LinkedinIcon, link: "https://linkedin.com/in/keniondang" },
+            { icon: Mail, link: "mailto:keninondang@gmail.com" }
           ].map((social, idx) => (
             <a 
               key={idx}
